@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<!--[if !(IE)]><!-->
+<html lang="ja"><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="INDEX,FOLLOW,NOODP,NOYDIR,NOARCHIVE">
+    <title>有意差検定ツール</title>
+    <meta name="description" content="有意差検定ツール">
+    <meta name="keywords" content="有意差検定">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+    <article class="container kentei">
+      <h1>有意差検定ツール</h1>
+      <form class="form-horizontal form-group" name="cal">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th colspan="2">サンプルＡ</th>
+              <th colspan="2">サンプルＢ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="2">
+                <input type="text" name="sample1" range="30,999999999" placeholder="サンプル数" class="form-control">
+              </td>
+              <td colspan="2">
+                <input type="text" name="sample2" range="30,999999999" placeholder="サンプル数" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">比率（a)</td>
+              <td colspan="2">比率（b)</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div class="input-group">
+                  <input type="text" name="portion1" range="0,100" placeholder="CVR" class="form-control span2"><span class="input-group-addon">%</span>
+                </div>
+              </td>
+              <td colspan="2">
+                <div class="input-group">
+                  <input type="text" name="portion2" range="0,100" placeholder="CVR" class="form-control span2"><span class="input-group-addon">%</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th colspan="4">必要有意水準</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="sig" value="1" onclick="siglevel1(this.form)">1%
+                  </label>
+                </div>
+              </td>
+              <td>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="sig" value="2" onclick="siglevel5(this.form)">5%
+                  </label>
+                </div>
+              </td>
+              <td>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="sig" value="3" onclick="siglevel10(this.form)">10%
+                  </label>
+                </div>
+              </td>
+              <td>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="sig" value="3" onclick="siglevel20(this.form)">20%
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <input type="reset" value="クリア" class="btn btn-default">
+                <input type="Button" value="有意差検定実行" onclick="calc(this.form)" class="btn btn-primary">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th colspan="4" class="panel-title">検定結果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4">統計量Z =
+                <input type="text" name="z" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4">有意水準　
+                <div class="input-group">
+                  <input type="text" name="need" range="0,100" class="form-control span2"><span class="input-group-addon">%</span>
+                </div>では
+                <input type="text" name="kentei" class="form-control">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </article>
+    <script src="js/kentei.js"></script>
+  </body>
+</html>
