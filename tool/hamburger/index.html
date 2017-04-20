@@ -1,0 +1,271 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css"></link>
+<style id="webmakerstyle">
+@charset "UTF-8";
+.cf::after {
+  content: "";
+  display: block;
+  clear: both; }
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: auto; }
+
+a {
+  color: #333;
+  text-decoration: none; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background: #fff;
+  overflow: hidden; }
+
+#trigger {
+  display: none; }
+
+header {
+  background: #333;
+  height: 40px;
+  position: relative;
+  z-index: 10; }
+
+header h1 {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem; }
+
+nav {
+  position: fixed;
+  width: 180px;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -180px;
+  overflow-y: scroll;
+  transition: 0.5s; }
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #333; }
+
+nav ul li {
+  border-bottom: 1px solid #ccc; }
+
+nav ul li a {
+  display: block;
+  padding: 0.5rem;
+  background: #333;
+  color: #fff; }
+
+nav ul li a:hover {
+  background: #666; }
+
+#contents {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100vh;
+  overflow-y: scroll;
+  transition: 0.5s;
+  width: 100%; }
+
+#contents article {
+  margin-top: 40px;
+  padding: 0.5rem; }
+
+#contents h1 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0; }
+
+#contents p {
+  margin: 0 0 1rem; }
+
+#triggerbutton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #333;
+  transition: 0.5s; }
+
+#triggerbutton::before,
+#triggerbutton::after,
+#triggerbutton span {
+  content: "";
+  display: block;
+  background: #fff;
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  left: 5px;
+  border-radius: 2px;
+  transition: 0.5s; }
+
+#triggerbutton::before {
+  top: 12px; }
+
+#triggerbutton::after {
+  bottom: 10px; }
+
+#triggerbutton span {
+  top: 20px; }
+
+#coverlayer {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0; }
+
+input#trigger:checked ~ nav {
+  left: 0; }
+
+input#trigger:checked ~ #triggerbutton {
+  left: 180px;
+  /* &::before {
+    transform: rotate(45deg);
+    width: 18px;
+    top: 14px;
+    left: 20px;
+  }
+  &::after {
+    transform: rotate(-45deg);
+    width: 18px;
+    bottom: 12px;
+    left: 20px;
+  } */ }
+  input#trigger:checked ~ #triggerbutton span {
+    display: none; }
+  input#trigger:checked ~ #triggerbutton::before {
+    transform: rotate(45deg);
+    top: 19px; }
+  input#trigger:checked ~ #triggerbutton::after {
+    transform: rotate(-45deg);
+    bottom: 19px; }
+
+input#trigger:checked ~ #contents {
+  left: 180px; }
+
+input#trigger:checked ~ #coverlayer {
+  display: block;
+  animation: cover 0.5s; }
+
+@keyframes cover {
+  0% {
+    background: transparent; }
+  100% {
+    background: rgba(0, 0, 0, 0.5); } }
+
+@media screen and (min-width: 960px) {
+  #triggerbutton {
+    display: none; }
+  input#trigger ~ nav,
+  input#trigger:checked ~ nav {
+    left: 0; }
+  input#trigger ~ #contents,
+  input#trigger:checked ~ #contents {
+    left: 0; }
+  input#trigger ~ #contents article,
+  input#trigger:checked ~ #contents article {
+    padding-left: calc(180px + 0.5rem); }
+  input#trigger ~ #coverlayer,
+  input#trigger:checked ~ #coverlayer {
+    display: none; } }
+
+</style>
+</head>
+<body>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>rwd20170305</title>
+</head>
+
+<body>
+<input type="checkbox" id="trigger">
+<header><h1>Title</h1></header>
+<label for="trigger" id="triggerbutton"><span></span></label>
+<nav>
+	<ul>
+		<li><a href="#">menu01</a></li>
+		<li><a href="#">menu02</a></li>
+		<li><a href="#">menu03</a></li>
+		<li><a href="#">menu04</a></li>
+		<li><a href="#">menu05</a></li>
+		<li><a href="#">menu06</a></li>
+		<li><a href="#">menu07</a></li>
+		<li><a href="#">menu08</a></li>
+		<li><a href="#">menu01</a></li>
+		<li><a href="#">menu02</a></li>
+		<li><a href="#">menu03</a></li>
+		<li><a href="#">menu04</a></li>
+		<li><a href="#">menu05</a></li>
+		<li><a href="#">menu06</a></li>
+		<li><a href="#">menu07</a></li>
+		<li><a href="#">menu08</a></li>
+		<li><a href="#">menu01</a></li>
+		<li><a href="#">menu02</a></li>
+		<li><a href="#">menu03</a></li>
+		<li><a href="#">menu04</a></li>
+		<li><a href="#">menu05</a></li>
+		<li><a href="#">menu06</a></li>
+		<li><a href="#">menu07</a></li>
+		<li><a href="#">menu08</a></li>
+		<li><a href="#">menu01</a></li>
+		<li><a href="#">menu02</a></li>
+		<li><a href="#">menu03</a></li>
+		<li><a href="#">menu04</a></li>
+		<li><a href="#">menu05</a></li>
+		<li><a href="#">menu06</a></li>
+		<li><a href="#">menu07</a></li>
+		<li><a href="#">menu08</a></li>
+	</ul>
+</nav>
+<section id="contents">
+	<article>
+		<h1>「武器じゃないか？」“謎の物体”の正体、160年経て判明　蘭学者の緒方洪庵もわからず</h1>
+		<p>「武器じゃないか？」「金の宝だろう？」－</p>
+
+<p>　江戸時代の蘭学者で医師の緒方洪庵（1810～63）も何に使うか分からず、“謎の物体”とされてきた物の正体が160年後の現代、大分県日田市の咸宜園教育研究センターの職員の手で明らかになった。それはろうそくの火を消すための道具「キャンドルスナッファー」。センターで開催中の企画展「廣瀬旭荘・敬四郎文庫」で公開中だ。</p>
+
+<p>【画像】この“謎の物体”について記述した日記の一部と一緒に、スケッチも見つかった</p>
+
+<p>　センターによると、物体は洪庵の友人で日田出身の漢詩人・儒学者、広瀬旭荘（きょくそう）（1807～63）の子孫宅から2012年に見つかった。金属製で全長18・5センチ、幅3センチ。先端は箱型で、はさみのように開閉できる仕組み。この物体について記述した旭荘の日記の一部と、スケッチも一緒に見つかった。日記は1842（天保13）年から53（嘉永6）年の間に書かれたとみられる。</p>
+
+<p>　日記によると、物体は6月26日、旭荘が拠点にしていた大坂（大阪府）で、漁の網に掛かっているのを発見。「色は黒くてかすかに赤く漆で染めたような感じ」といい、「西洋のものではないか」と考えた旭荘は、友人に尋ねるが「戦に使う道具ではないか」という人や「元は金（きん）だろう」という人がいて答えは出ない。物体にはオランダ語に似た文字が彫られていたため旭荘は友人の洪庵にも見せるが回答は「不識」。結局正体は分からなかった。</p>
+
+<p>　突き止めたのはセンターの学芸担当、溝田直己さん（35）。旭荘関連の資料を調査中だった2014年、旅行先でチェコの画家の作品展を観賞。作品の一つによく似たものが描かれているのに気が付き、それがキャンドルスナッファーと分かった。「一体何なのか見当も付かなかったので、絵を見たときは衝撃だった。できるなら旭荘さんにも教えてあげたかった」と溝田さん。企画展は入館無料で31日まで。</p>
+	</article>
+</section>
+<label for="trigger" id="coverlayer"></label>
+</body>
+</html>
+
+
+<script src="filesystem:chrome-extension://lkfkkhfhhdkiemehlpkgjeojomhpccnh/temporary/script.js">
+</script>
+</body>
+</html>
