@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "engines": {
+    "node": ">=6.10.3"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.3.3",
+    "browser-sync": "^2.18.0",
+    "del": "^2.2.0",
+    "glob": "^7.0.0",
+    "gulp": "^3.9.1",
+    "gulp-cached": "^1.1.0",
+    "gulp-cr-lf-replace": "0.0.4",
+    "gulp-csso": "^1.0.1",
+    "gulp-filter": "^3.0.1",
+    "gulp-flatten": "^0.2.0",
+    "gulp-iconfont": "^8.0.1",
+    "gulp-iconfont-css": "^2.1.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-indent": "^1.0.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.0",
+    "gulp-prettify": "^0.4.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-styledocco": "^0.0.3",
+    "gulp-svgo": "^1.0.3",
+    "gulp-uglify": "^1.5.3",
+    "gulp-uncss": "^1.0.4",
+    "gulp-useref": "^3.0.7",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "main-bower-files": "^2.13.1",
+    "node-bourbon": "^4.2.8",
+    "run-sequence": "^1.1.5",
+    "wiredep": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
