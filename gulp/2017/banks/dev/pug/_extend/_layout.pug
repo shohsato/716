@@ -1,0 +1,27 @@
+doctype
+html(lang="ja")
+	head
+		//- IE8+に対して「IE=edge」と指定することで、利用できる最も互換性の高い最新のエンジンを使用するよう指示できます
+		//- 参考: https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible
+		//- ただしTCVがデフォルトie9表示のため互換表示の拒否は非対応
+		//- meta(http-equiv="x-ua-compatible" content="ie=edge")
+
+		block title
+			
+		//- パフォーマンスのために使用する文字のエンコーディングを記述
+		//- 参考: https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly
+		meta(charset="UTF-8")
+		block meta
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		meta(name="robots" content="noodp,noydir,noarchive")
+		meta(name="format-detection", content="telephone=no")
+
+		//- For IE 11, Chrome, Firefox, Safari, Opera
+		link(href="path/to/tcv_favicon.png" rel="icon" sizes="16x16" type="image/png")
+		//- link(href="path/to/tcv_favicon.png" rel="icon" sizes="32x32" type="image/png")
+		//- link(href="path/to/tcv_favicon.png" rel="icon" sizes="48x48" type="image/png")
+		//- link(href="path/to/tcv_favicon.png" rel="icon" sizes="62x62" type="image/png")
+		block css
+	body
+		block body
+		block js
