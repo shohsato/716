@@ -4,7 +4,7 @@
     "node": ">=6.10.3"
   },
   "dependencies": {
-    "autoprefixer": "^6.3.3",
+    "autoprefixer": "^6.7.7",
     "browser-sync": "^2.18.0",
     "del": "^2.2.0",
     "glob": "^7.0.0",
