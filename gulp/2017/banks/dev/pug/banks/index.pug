@@ -2,8 +2,8 @@ extends /_extend/_layout
 block title
 	title BANKS
 block prepend meta
-	meta(name="description", content="***********")
-	meta(name="keywords", content="***********")
+	meta(name="description", content="キッチンカーの出店手配、レンタル、製作からロケ弁・会議弁当 高級弁当の配達まで、飲食に関する事はBANKSにご相談ください。")
+	meta(name="keywords", content="banks,キッチンカー")
 block prepend css
 	include /_include/_inc__css
 block body
@@ -11,23 +11,24 @@ block body
 		nav(role="navigation").navbar.navbar-default.navbar-fixed-top
 			.navbar-header
 				a(href="#").navbar-brand
-					|BANKS produce
+					svg.navbar-header__logo(role='img', aria-labelledby='title')
+						use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/images/common/logo-banks_typo.svg')
 			.collapse.navbar-collapse.navbar-ex1-collapse
 				ul.nav.navbar-nav
 					li.active
-						a(href="#")
+						a(href="#what_banks")
 							|BANKSとは
 					li
-						a(href="#")
+						a(href="#kitchen_car")
 							|キッチンカー
 					li
-						a(href="#")
+						a(href="#bento")
 							|お弁当
 					li
-						a(href="#")
+						a(href="#message")
 							|メッセージ
 					li
-						a(href="#")
+						a(href="#contact")
 							|お問い合わせ
 			.cp-info__area
 				.cp-name
