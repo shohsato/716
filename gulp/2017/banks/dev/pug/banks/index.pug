@@ -11,9 +11,30 @@ block body
 		nav(role="navigation").navbar.navbar-default.navbar-fixed-top
 			.navbar-header
 				a(href="#").navbar-brand
-					svg.navbar-header__logo(role='img', aria-labelledby='title')
+					object.navbar-header__logo(type="image/svg+xml" data="/images/common/logo-banks_typo.svg")
+				button(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse").navbar-toggle.collapsed
+					span.sr-only
+						|Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+					//- svg.navbar-header__logo(role='img', aria-labelledby='title')
 						use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/images/common/logo-banks_typo.svg')
 			.collapse.navbar-collapse.navbar-ex1-collapse
+				.cp-info__area
+					.cp-name
+						|株式会社OmtRak (BANKS事業部)
+					.cp-address
+						|東京都新宿区西五軒町11-5　第31弥生ビル3F
+					dl.cp-tel-list
+						dt.cp-tellist__ttl
+							|TEL:
+						dd.cp-tellist__body
+							|03-6265-0535
+						dt.cp-tellist__ttl
+							|FAX:
+						dd.cp-tellist__body
+							|03-6265-0538
 				ul.nav.navbar-nav
 					li.active
 						a(href="#what_banks")
@@ -30,20 +51,6 @@ block body
 					li
 						a(href="#contact")
 							|お問い合わせ
-			.cp-info__area
-				.cp-name
-					|株式会社OmtRak (BANKS事業部)
-				.cp-address
-					|東京都新宿区西五軒町11-5　第31弥生ビル3F
-				dl.cp-tel-list
-					dt.cp-tellist__ttl
-						|TEL:
-					dd.cp-tellist__body
-						|03-6265-0535
-					dt.cp-tellist__ttl
-						|FAX:
-					dd.cp-tellist__body
-						|03-6265-0538
 	#sb-site
 		header
 			.jumbotron

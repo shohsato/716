@@ -7,6 +7,7 @@ var gulp           = require('gulp'),
     autoprefixer   = require('autoprefixer'),/*caniuseベースでベンダープレフィックスをつける*/
     bourbon        = require('node-bourbon'),/*sassのmixin集*/
     browserSync    = require('browser-sync'),/*ブラウザを自動リロードさせる*/
+    changed        = require('gulp-changed'),/*変更ファイルの監視*/
     cached         = require('gulp-cached'),/*対象となるファイルをメモリにキャッシュし、変更された分だけを処理させる*/
     csso           = require('gulp-csso'),/*cssの圧縮*//*未使用*/
     del            = require('del'),/*ファイルを削除してくれる*//*未使用*/
@@ -33,8 +34,8 @@ var gulp           = require('gulp'),
     useref         = require('gulp-useref'),/*html内のcssやjsの読込み部分を変更（ファイルをまとめてくれたりする）*/
     crLfReplace    = require('gulp-cr-lf-replace'),/*改行コードを指定できる*/
     mainBowerFiles = require('main-bower-files'),/*BowerでインストールしたWebフォントをコピー*/
-    runSequence    = require('run-sequence'),/*gulpタスクの実行順序を指定できる*/
-    wiredep        = require('wiredep').stream;/*Bowerの依存関係をソースコードに組み込む*/
+    wiredep        = require('wiredep'),/*Bowerの依存関係をソースコードに組み込む*/
+    runSequence    = require('run-sequence').stream;/*gulpタスクの実行順序を指定できる*/
 
 
 // 初期化
@@ -55,8 +56,8 @@ gulp.task('init', function() {
 // ------------------------------------------
 gulp.task('pug', function() {
   return gulp.src(['dev/pug/**/*.pug', '!dev/pug/**/_*.pug'])
-    // .pipe(changed('pug', {extension: '.pug'}))
-    // .pipe(cached('pug'))
+    .pipe(changed('pug', {extension: '.pug'}))
+    .pipe(cached('pug'))
     .pipe(plumber({
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
@@ -261,7 +262,7 @@ gulp.task('watch', ['serve'], function () {
     'dev/js/**/*.js',
     'dev/fonts/**/*',
     'dev/images/**/*'
-  ]).on('change', browserSync.reload);
+  ], {interval: 500}).on('change', browserSync.reload);
   gulp.watch('dev/pug/**/*.pug', ['pug']);
   gulp.watch('dev/scss/**/*.*', ['sass']);
   gulp.watch('dev/js/**/*.js', ['jshint']);

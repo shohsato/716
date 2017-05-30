@@ -1,0 +1,357 @@
+//===================================================
+//  extend setting
+//===================================================
+%clearfix {
+	*zoom: 1;
+	&:after {
+		clear: both;
+		content: " ";
+		display: table;
+	}
+}
+
+
+
+//===================================================
+//  mixin setting
+//===================================================
+
+
+//  if legacy-ie
+//---------------------------------------------------
+@mixin legacy-ie($v: 9) {
+  .ie#{$v} & {
+    @content;
+  }
+}
+
+//  if all ie
+//---------------------------------------------------
+@mixin msie {
+	.msie & {
+		@content;
+	}
+}
+
+//  if all edge
+//---------------------------------------------------
+@mixin edge {
+	.edge & {
+		@content;
+	}
+}
+
+//  ipad
+//---------------------------------------------------
+@mixin ipad {
+	.ipad & {
+		@content;
+	}
+}
+
+//  ios
+//---------------------------------------------------
+@mixin ios {
+	.ios & {
+		@content;
+	}
+}
+
+//  nth-child
+//---------------------------------------------------
+@import 'family';
+
+
+//  media-query
+//---------------------------------------------------
+
+// 変数の定義
+// min-width
+$breakpoint-up: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1024px)',
+  'xl': 'screen and (min-width: 1260px)',
+) !default;
+
+// max-width
+$breakpoint-down: (
+  'sm': 'screen and (max-width: 399px)',
+  'md': 'screen and (max-width: 767px)',
+  'lg': 'screen and (max-width: 1023px)',
+  'xl': 'screen and (max-width: 1259px)',
+) !default;
+
+// @mixinの定義
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+
+
+// HSB color
+//---------------------------------------------------
+// RGB > HSB
+@function rgb-to-hsb($baseColor) {
+    $r-rgb: red($baseColor);
+    $g-rgb: green($baseColor);
+    $b-rgb: blue($baseColor);
+    $max: max($r-rgb, $g-rgb, $b-rgb);
+    $min: min($r-rgb, $g-rgb, $b-rgb);
+
+    $h-hsb: 0;
+    @if $max == $min {
+        $h-hsb: 0;
+    }@else if $max == $r-rgb {
+        $h-hsb: 60 * (($g-rgb - $b-rgb) / ($max - $min));
+    } @else if $max == $g-rgb {
+        $h-hsb: 60 * (($b-rgb - $r-rgb) / ($max - $min)) + 120;
+    } @else if $max == $b-rgb {
+        $h-hsb: 60 * (($r-rgb - $g-rgb) / ($max - $min)) + 240;
+    }
+
+    $h-hsb: if($h-hsb < 0, $h-hsb + 360, $h-hsb);
+    $s-hsb: (($max - $min) / $max) * 100;
+    $b-hsb: ($max / 255) * 100;
+
+    @return $h-hsb, $s-hsb, $b-hsb;
+}
+
+// HSB > RGB
+@function hsb-to-rgb($h-hsb, $s-hsb, $b-hsb) {
+    $max: $b-hsb * 255 / 100;
+    $min: $max - (($s-hsb / 100) * $max);
+    $r-rgb: 0;
+    $g-rgb: 0;
+    $b-rgb: 0;
+
+    @if 0 <= $h-hsb and $h-hsb <= 60 {
+        $r-rgb: $max;
+        $g-rgb: ($h-hsb / 60) * ($max - $min) + $min;
+        $b-rgb: $min;
+    } @else if 61 <= $h-hsb and $h-hsb <= 120 {
+        $r-rgb: ((120 - $h-hsb) / 60) * ($max - $min) + $min;
+        $g-rgb: $max;
+        $b-rgb: $min;
+    } @else if 121 <= $h-hsb and $h-hsb <= 180 {
+        $r-rgb: $min;
+        $g-rgb: $max;
+        $b-rgb: (($h-hsb - 120) / 60) * ($max - $min) + $min;
+    } @else if 181 <= $h-hsb and $h-hsb <= 240 {
+        $r-rgb: $min;
+        $g-rgb: ((240 - $h-hsb) / 60) * ($max - $min) + $min;
+        $b-rgb: $max;
+    } @else if 241 <= $h-hsb and $h-hsb <= 300 {
+        $r-rgb: (($h-hsb - 240) / 60) * ($max - $min) + $min;
+        $g-rgb: $min;
+        $b-rgb: $max;
+    } @else if 301 <= $h-hsb and $h-hsb <= 360 {
+        $r-rgb: $max;
+        $g-rgb: $min;
+        $b-rgb: ((360 - $h-hsb) / 60) * ($max - $min) + $min;
+    }
+
+    @return rgb($r-rgb, $g-rgb, $b-rgb);
+}
+
+// 明度（B値）変更
+@function calc-color-bright($baseColor, $num) {
+    $hsb: rgb-to-hsb($baseColor);
+    @return hsb-to-rgb(nth($hsb, 1), nth($hsb, 2), nth($hsb, 3) + $num);
+}
+// 色相（H値）変更
+@function calc-color-hue($baseColor, $num) {
+    $hsb: rgb-to-hsb($baseColor);
+    @return hsb-to-rgb(nth($hsb, 1) + $num, nth($hsb, 2), nth($hsb, 3));
+}
+// 彩度（S値）変更
+@function calc-color-saturation($baseColor, $num) {
+    $hsb: rgb-to-hsb($baseColor);
+    @return hsb-to-rgb(nth($hsb, 1), nth($hsb, 2) + $num, nth($hsb, 3));
+}
+
+
+//  decoration
+//---------------------------------------------------
+
+// mixin box-shadow
+@mixin box-shadow( $h: 10px , $v: 10px , $b: 0px , $s: 0px , $c: #000000 , $i:"" ) {
+	-webkit-box-shadow: $h $v $b $s $c #{$i};
+	-moz-box-shadow: $h $v $b $s $c #{$i};
+	box-shadow: $h $v $b $s $c #{$i};
+ }
+
+ // mixin gradient
+@mixin gradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+}
+
+// dropdown function
+//---------------------------------------------------
+$btn-dropdown-height: 24px;
+
+@mixin menu__second-level {
+	// display: none;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 1;
+}
+
+@mixin menu__third-level {
+	// display: none;
+	visibility: hidden;
+	opacity: 0;
+}
+
+@mixin menu__fourth-level {
+	// display: none;
+	visibility: hidden;
+	opacity: 0;
+}
+
+// deep menu
+//---------------------------------------------------
+@mixin deep-menu--side {
+	position: relative;
+	> .dropdown-content {
+		@include menu__second-level;
+		position: absolute;
+		min-width: 100%;
+		list-style-type: none;
+		top: 0;
+		left: 80%;
+	}
+	&:hover > .dropdown-content {
+		visibility: visible;
+		opacity: 1;
+		z-index: 1;
+		left: 120%;
+		transition: all .2s ease;
+	}
+}
+
+// single menu
+//---------------------------------------------------
+@mixin dropdown-menu--single {
+	position: relative;
+	> .dropdown-content {
+		@include menu__second-level;
+		position: absolute;
+		min-width: 100%;
+		list-style-type: none;
+		transition: all .2s ease;
+	}
+	&:hover > .dropdown-content {
+		visibility: visible;
+		opacity: 1;
+		z-index: 1;
+	}
+}
+
+// mega menu 
+//---------------------------------------------------
+// .menu__megaの親タグにposition: relative;が必要
+.parent-menu__mega {
+	position: relative;
+}
+@mixin dropdown-menu__mega {
+	> .dropdown-content {
+		@include menu__second-level;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		padding: 0;
+		// padding: 20px 2%;
+		
+		-webkit-transition: all .2s ease;
+		transition: all .2s ease;
+		> li {
+			// float: left;
+			// width: 32%;
+			border: none;
+		}
+		> li:nth-child(3n+2) {
+			margin: 0 1%;
+		}
+	}
+	&:hover > .dropdown-content {
+		visibility: visible;
+		opacity: 1;
+		z-index: 1;
+	}
+}
+// multi menu
+//---------------------------------------------------
+
+li.menu__multi {
+	position: relative;
+	> .dropdown-content {
+		@include menu__second-level;
+		position: absolute;
+		width: 100%;
+		padding: 0;
+		list-style-type: none;
+		-webkit-transition: all .2s ease;
+		transition: all .2s ease;
+	}
+	&:hover > .dropdown-content {
+		@include  menu__second-level;
+		visibility: visible;
+		opacity: 1;
+		li {
+			position: relative;
+			> .dropdown-content {
+				@include menu__third-level;
+				position: absolute;
+				top: 0;
+				left: 100%;
+				width: 100%;
+				padding: 0;
+				list-style: none;
+				
+				-webkit-transition: all .2s ease;
+				transition: all .2s ease;
+				li {
+					position: relative;
+				}
+			}
+			&:hover > .dropdown-content {
+				visibility: visible;
+				opacity: 1;
+				z-index: 1;
+				li {
+					> .dropdown-content {
+						@include menu__fourth-level;
+						position: absolute;
+						top: 0;
+						left: 100%;
+						width: 100%;
+						padding: 0;
+						list-style: none;
+						
+						-webkit-transition: all .2s ease;
+						transition: all .2s ease;
+					}
+					&:hover > .dropdown-content {
+						visibility: visible;
+						opacity: 1;
+						z-index: 1;
+					}
+				}
+			}
+		}
+	}
+}

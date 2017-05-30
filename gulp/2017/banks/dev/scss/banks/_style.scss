@@ -1,11 +1,58 @@
 // banks
 // --------------------------------------------------
 .navbar-wrap {
-
+	height: 124px;
+	background-color: #eee;
+}
+.navbar {
+	&:before {
+		content: none;
+	}
+	@include mq-up(md) {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&:before {
+			content: "";
+			display: block;
+			width: 44px;
+			height: 34px;
+		}
+	}
 }
 .navbar-header {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: aouto;
+	&:before {
+		content: none;
+		// content: "";
+		// display: block;
+		// width: 44px;
+		// height: 34px;
+	}
+	&:after {
+		content: none;
+	}
 	&__logo {
 		width: 168px;
-		height: 50px;
+		height: 51px;
+	}
+}
+.navbar-brand {
+	height: auto;
+}
+.cp-info__area {
+	@include mq-down(md) {
+		display: none;
 	}
 }
