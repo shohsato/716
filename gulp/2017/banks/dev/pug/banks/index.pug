@@ -11,15 +11,14 @@ block body
 		nav(role="navigation").navbar.navbar-default.navbar-fixed-top
 			.navbar-header
 				a(href="#").navbar-brand
-					object.navbar-header__logo(type="image/svg+xml" data="/images/common/logo-banks_typo.svg")
+					svg.navbar-header__logo(role='img', aria-labelledby='title')
+						use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/images/common/logo-banks.svg#logo-banks_typo')
 				button(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse").navbar-toggle.collapsed
 					span.sr-only
 						|Toggle navigation
 					span.icon-bar
 					span.icon-bar
 					span.icon-bar
-					//- svg.navbar-header__logo(role='img', aria-labelledby='title')
-						use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/images/common/logo-banks_typo.svg')
 			.collapse.navbar-collapse.navbar-ex1-collapse
 				.cp-info__area
 					.cp-name
@@ -27,13 +26,14 @@ block body
 					.cp-address
 						|東京都新宿区西五軒町11-5　第31弥生ビル3F
 					dl.cp-tel-list
-						dt.cp-tellist__ttl
+						dt.cp-tel-list__ttl
 							|TEL:
-						dd.cp-tellist__body
-							|03-6265-0535
-						dt.cp-tellist__ttl
+						dd.cp-tel-list__body
+							a(href="tel:0362650535")
+								|03-6265-0535
+						dt.cp-tel-list__ttl
 							|FAX:
-						dd.cp-tellist__body
+						dd.cp-tel-list__body
 							|03-6265-0538
 				ul.nav.navbar-nav
 					li.active

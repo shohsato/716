@@ -1,11 +1,14 @@
 // banks
 // --------------------------------------------------
+body {
+	font-family: $font-family-serif;
+}
 .navbar-wrap {
-	height: 124px;
+	height: 189px;
 	background-color: #eee;
 }
 .navbar {
-	&:before {
+	&:after {
 		content: none;
 	}
 	@include mq-up(md) {
@@ -16,11 +19,24 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		&:before {
-			content: "";
-			display: block;
-			width: 44px;
-			height: 34px;
+	}
+	.cp-tel-list {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 0;
+		&__ttl {
+			width: 12%;
+			font-weight: 300;
+		}
+		&__body {
+			width: 38%;
+			a {
+				color: $text-color;
+			}
 		}
 	}
 }
@@ -52,6 +68,9 @@
 	height: auto;
 }
 .cp-info__area {
+	@include padding(8px 5% 8px 45%);
+	font-family: $font-family-sans-serif;
+	font-size: 12px;
 	@include mq-down(md) {
 		display: none;
 	}
