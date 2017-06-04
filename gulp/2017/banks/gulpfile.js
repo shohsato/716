@@ -7,7 +7,7 @@ var gulp           = require('gulp'),
     autoprefixer   = require('autoprefixer'),/*caniuseベースでベンダープレフィックスをつける*/
     bourbon        = require('node-bourbon'),/*sassのmixin集*/
     browserSync    = require('browser-sync'),/*ブラウザを自動リロードさせる*/
-    changed        = require('gulp-changed'),/*変更ファイルの監視*/
+    // changed        = require('gulp-changed'),/*変更ファイルの監視*/
     cached         = require('gulp-cached'),/*対象となるファイルをメモリにキャッシュし、変更された分だけを処理させる*/
     csso           = require('gulp-csso'),/*cssの圧縮*//*未使用*/
     del            = require('del'),/*ファイルを削除してくれる*//*未使用*/
@@ -56,8 +56,8 @@ gulp.task('init', function() {
 // ------------------------------------------
 gulp.task('pug', function() {
   return gulp.src(['dev/pug/**/*.pug', '!dev/pug/**/_*.pug'])
-    .pipe(changed('pug', {extension: '.pug'}))
-    .pipe(cached('pug'))
+    // .pipe(changed('pug', {extension: '.pug'}))
+    // .pipe(cached('pug'))
     .pipe(plumber({
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))

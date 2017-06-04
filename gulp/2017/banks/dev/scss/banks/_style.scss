@@ -1,13 +1,24 @@
 // banks
 // --------------------------------------------------
+
+// //== Colors
+$yellow: #F0BF1B;
+$gray: #717071;
+$light-gray: #f8f8f8;
+$light-green: #6EBAAD;
+
+
+
+// //== Layout
 body {
 	font-family: $font-family-serif;
 }
 .navbar-wrap {
-	height: 189px;
-	background-color: #eee;
+	// height: 189px;
+	// background-color: #eee;
 }
 .navbar {
+	margin-bottom: 0;
 	&:after {
 		content: none;
 	}
@@ -75,3 +86,272 @@ body {
 		display: none;
 	}
 }
+
+// jumbotron area
+.jumbotron {
+	margin-top: 86px;
+	background-image: url('/images/common/bg_top.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	@include mq-up(md) {
+		min-height: 714px;
+		margin-top: 118px;
+	}
+}
+.block-mg-md {
+	position: relative;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	position: relative;
+}
+// content ttl yellow
+.content-ttl {
+	flex: 1 1 100%;
+	text-align: center;
+}
+h2.content-ttl {
+	margin-bottom: 48px;
+	font-size: 44px
+}
+h4.content-ttl {
+	font-size: 24px
+}
+.ttl-inner--udl-yellow {
+	display: inline-block;
+	@include padding(null 8px);
+	border-bottom: 4px solid $yellow;
+}
+
+// section 01
+.section-01 {
+	.section-inner {
+		position: relative;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	.cilcle {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		flex: 1 1 60vw;
+		max-width: 60vw;
+		height: 60vw;
+		// margin-right: calc(85% - 250px);
+		// margin-left: 15%;
+		margin-bottom: 2vh;
+		background-color: $yellow;
+		border-radius: 50%;
+		color: #fff;
+		@include mq-up(md) {
+			flex: 1 1 250px;
+			max-width: 250px;
+			height: 250px;
+			margin-bottom: 10vh;
+			&:last-child {
+				margin-top: 12vh;
+				margin-bottom: 0;
+			}	
+		}
+		&__ttl {
+			flex: 1 1 100%;
+			@include margin(72px null 0);
+			line-height: 1;
+			text-align: center;
+			font-size: 24px;
+			@include mq-up(md) {
+				font-size: 32px;
+			}
+		}
+		&__body {
+			flex: 1 1 100%;
+			@include margin(null null 72px);
+			line-height: 1.25;
+			text-align: center;
+			font-size: 16px;
+			@include mq-up(md) {
+				font-size: 20px	;
+			}
+		}
+	}
+	.cross-icon__block {
+		position: relative;
+		z-index: 10;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: -8vw;
+		@include mq-up(md) {
+			margin: 0 -24px;
+		}
+		&-body {
+			margin-bottom: 8px;
+			font-size: 24px;
+			color: $gray;
+			text-align: center;
+			line-height: 1;
+		}
+	}
+	.cross-icon {
+		@include margin(null 6vw 0 4vw);
+			@include mq-up(md) {
+				@include margin(null 16px 0 10px);
+			}
+		&:before, &:after {
+			content: "";
+			display: block;
+			width: 20px;
+			height: 4px;
+			background-color: $gray;
+		}
+		&:before {
+			transform: rotate(-45deg);
+		}
+		&:after {
+			position: relative;
+			top: -4px;
+			transform: rotate(45deg);
+		}
+	}
+	.brand-logo-txt {
+		display: none;
+		@include mq-up(md) {
+			position: absolute;
+			bottom: 0;
+			left: 4vw;
+			display: block;
+			opacity: .5;
+			> p {
+				margin-bottom: 0;
+				font-size: 32px;
+				text-align: center;
+				line-height: 1;
+				color: $yellow;
+				&.txt-large {
+					font-size: 72px;
+				}
+			}
+		}
+	}
+} 
+
+// section 02
+.section-02 {
+	@include padding(80px null);
+	background-color: $light-gray;
+	.section-inner {
+		width: 100%;
+		max-width: 684px;
+	}
+	.merit-list {
+		flex: 1 1 100%;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		margin-bottom: 24px;
+		padding-left: 0;
+		&__item {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 200px;
+			margin-left: 40px;
+			border-radius: 16px;
+			line-height: 96px;
+			background-color: $light-green;
+			font-size: 40px;
+			color: #fff;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+	.merit-txt-body {
+		padding: 1em;
+		border-radius: 16px;
+		background-color: $yellow;
+		text-align: center;
+		font-size: 24px;
+		line-height: 1.25;
+		color: #fff;
+	}
+	.content-body {
+		font-size: 16px;
+	}
+}
+
+// section 03
+.section-03 {
+	.section-inner {
+		width: 100%;
+		max-width: 684px;
+	}
+	.section-ttl--bgc-yellow {
+		padding: 1em;
+		margin-bottom: 64px;
+		border-radius: 16px;
+		background-color: $yellow;
+		text-align: center;
+		font-size: 32px;
+		line-height: 1;
+		color: #fff;
+	}
+	.content-ttl {
+		margin-bottom: 32px;
+	}
+	.content-body {
+		margin-bottom: 56px;
+		font-size: 16px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
