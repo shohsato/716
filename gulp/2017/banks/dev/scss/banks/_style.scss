@@ -350,6 +350,7 @@ h4.content-ttl {
 
 // section 03
 .section-03 {
+	flex-direction: column;
 	.section-ttl-block {
 		width: 100%;
 		background-image: url("/images/common/kitchen_car__yellow.jpg");
@@ -431,6 +432,7 @@ h4.content-ttl {
 
 // section 04
 .section-04 {
+	flex-direction: column;
 	.section-ttl-block {
 		width: 100%;
 		background-image: url("/images/common/bento.jpg");
