@@ -90,7 +90,7 @@ body {
 // jumbotron area
 .jumbotron {
 	margin-top: 86px;
-	background-image: url('/images/common/bg_top.png');
+	background-image: url("/images/common/bg_top.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -128,7 +128,30 @@ h4.content-ttl {
 	@include padding(null 8px);
 	border-bottom: 4px solid $yellow;
 }
-
+.btn-contact {
+	display: block;
+	width: 20em;
+	@include margin(null auto);
+	padding: 0;
+	border-radius: 8px;
+	background-color: $light-green;
+	border: 2px solid #fff;
+	box-shadow: 0 0 0 2px $light-green;
+	cursor: pointer;
+	transition: .3s;
+	&:hover {
+		background-color: rgba($light-green, .8);
+	}
+	> a {
+		display: block;
+		@include padding(.5em 1em);
+		font-size: 16px;
+		color: #fff;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
 // section 01
 .section-01 {
 	.section-inner {
@@ -327,6 +350,55 @@ h4.content-ttl {
 
 // section 03
 .section-03 {
+	.section-ttl-block {
+		width: 100%;
+		background-image: url("/images/common/kitchen_car__yellow.jpg");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		border-top: 8px solid $light-gray;
+	}
+	.section-ttl__inner {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.section-ttl {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 385px;
+		height: 156px;
+		background-color: rgba(#fff, .8);
+		color: $gray;
+		text-align: center;
+		.main-title {
+			margin-bottom: 8px;
+			border-bottom: 1px solid $gray;
+			font-size: 32px;
+		}
+		.sub-title {
+			font-size: 16px;
+		}
+	}
+	.section-lead-txt {
+		margin-bottom: 0;
+		padding: 1em;
+		background-color: rgba($light-green, .8);
+		border-top: 8px solid $yellow;
+		text-align: center;
+		font-size: 24px;
+		color: #fff;
+	}
 	> .block-mg-md {
 		@include margin(0 null);
 	}
@@ -359,6 +431,55 @@ h4.content-ttl {
 
 // section 04
 .section-04 {
+	.section-ttl-block {
+		width: 100%;
+		background-image: url("/images/common/bento.jpg");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		border-top: 8px solid $light-gray;
+	}
+	.section-ttl__inner {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.section-ttl {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 385px;
+		height: 156px;
+		background-color: rgba($gray, .5);
+		color: #fff;
+		text-align: center;
+		.main-title {
+			margin-bottom: 8px;
+			border-bottom: 1px solid #fff;
+			font-size: 32px;
+		}
+		.sub-title {
+			font-size: 16px;
+		}
+	}
+	.section-lead-txt {
+		margin-bottom: 0;
+		padding: 1em;
+		background-color: rgba($light-green, .8);
+		border-top: 8px solid $yellow;
+		text-align: center;
+		font-size: 24px;
+		color: #fff;
+	}
 	> .block-mg-md {
 		@include margin(0 null);
 	}
