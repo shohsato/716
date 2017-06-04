@@ -270,8 +270,12 @@ h4.content-ttl {
 		justify-content: center;
 		align-items: center;
 		list-style: none;
+		flex-direction: column;
 		margin-bottom: 24px;
 		padding-left: 0;
+		@include mq-up(md) {
+			flex-direction: row;
+		}
 		&__item {
 			display: -webkit-flex;
 			display: -moz-flex;
@@ -280,19 +284,26 @@ h4.content-ttl {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 200px;
-			margin-left: 40px;
+			width: 90%;
+			margin-bottom: 24px;
 			border-radius: 16px;
 			line-height: 96px;
 			background-color: $light-green;
 			font-size: 40px;
 			color: #fff;
-			&:first-child {
-				margin-left: 0;
+			@include mq-up(md) {
+				flex-direction: row;
+				margin-bottom: 0;
+				margin-left: 40px;
+				&:first-child {
+					margin-left: 0;
+				}
 			}
 		}
 	}
 	.merit-txt-body {
+		width: 90%;
+		@include margin(null auto);
 		padding: 1em;
 		border-radius: 16px;
 		background-color: $yellow;
@@ -300,16 +311,63 @@ h4.content-ttl {
 		font-size: 24px;
 		line-height: 1.25;
 		color: #fff;
+		@include mq-up(md) {
+			width: 100%;
+		}
 	}
 	.content-body {
+		width: 90%;
+		@include margin(null auto);
 		font-size: 16px;
+		@include mq-up(md) {
+			width: 100%;
+		}
 	}
 }
 
 // section 03
 .section-03 {
+	> .block-mg-md {
+		@include margin(0 null);
+	}
 	.section-inner {
-		width: 100%;
+		width: 90%;
+		@include margin(null auto);
+		@include mq-up(md) {
+			width: 100%;
+		}
+		max-width: 684px;
+	}
+	.section-ttl--bgc-yellow {
+		padding: 1em;
+		margin-bottom: 64px;
+		border-radius: 16px;
+		background-color: $yellow;
+		text-align: center;
+		font-size: 32px;
+		line-height: 1;
+		color: #fff;
+	}
+	.content-ttl {
+		margin-bottom: 32px;
+	}
+	.content-body {
+		margin-bottom: 56px;
+		font-size: 16px;
+	}
+}
+
+// section 04
+.section-04 {
+	> .block-mg-md {
+		@include margin(0 null);
+	}
+	.section-inner {
+		width: 90%;
+		@include margin(null auto);
+		@include mq-up(md) {
+			width: 100%;
+		}
 		max-width: 684px;
 	}
 	.section-ttl--bgc-yellow {
