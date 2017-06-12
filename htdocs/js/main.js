@@ -1,0 +1,1 @@
+!function(o){"use strict";o('a[href^="#"]').smoothScroll({duration:3e3}),o(".navbar-fixed-top").autoHidingNavbar(),o.slidebars(),console.log("Write Your Code.")}(jQuery);
