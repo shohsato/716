@@ -64,7 +64,7 @@ block body
 			.container-fluid
 				.row
 					article
-						section.block-mg-md.section-01
+						section#what_banks.block-mg-md.section-01
 							.section-inner
 								h2.content-ttl
 									.ttl-inner--udl-yellow
@@ -109,7 +109,7 @@ block body
 									|BANKSではその手間を一切お掛けせず、幅広いお客様のニーズに柔軟に対応させていただきます。飲食に関する事はなんでもBANKSにご相談ください。
 								p.content-body
 									|あなたのビジネスが 次につながるお手伝いをさせていただきます。
-						section.block-mg-md.section-03
+						section#kitchen_car.block-mg-md.section-03
 							.section-ttl-block
 								h2.section-ttl__inner
 									.section-ttl
@@ -148,13 +148,42 @@ block body
 											|出店者の全てが安心で安全とは限らない
 									p.content-body
 										|ご自身で出店者を探したり仲介業者に依頼する場合、すべての出店者が良人で高クオリティの物が提供できるとは限りません。 BANKSではただ多くのキッチンカーをご紹介するのではなく、実際共に出店をした実績や信頼のある出店者のみを厳選し、紹介いたします。
-									button.btn-contact
-										a(href="")
-											|詳しくはお問い合わせください
-							section.slider
-								ul
-									li
-						section.block-mg-md.section-04
+									.btn-contact-wrap
+										button.btn-contact
+											a(href="")
+												|詳しくはお問い合わせください
+							section.carousel-slider-wrap
+								// Place somewhere in the <body> of your page
+								.flexslider.carousel-slider__kitchen-car
+									ul.slides
+										li
+											img(src='/images/common/kitchen_car__green.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-1.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-2.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-3.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-4.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-5.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-6.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-7.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-8.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-9.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-10.jpg')
+								// items mirrored twice, total of 12
+								svg.navbar-header__logo(role='img', aria-labelledby='title')
+									use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/images/common/logo-banks.svg#logo-banks_typo')
+
+
+						section#bento.block-mg-md.section-04
 							.section-ttl-block
 								h2.section-ttl__inner
 									.section-ttl
@@ -173,44 +202,76 @@ block body
 											|イベントなどで移動販売を呼びたい
 									p.content-body
 										|ロケ・イベント・会議・接待などで大量のお弁当が必要になった時、日程や価格、お届け場所などのお客様のニーズに合った弁当を、自社が厳選したお弁当業者のさらに選び抜いた逸品のみをご紹介。実績や信頼のある業者のみを選定しているのでクオリティの高いサービスをお約束。
-									button.btn-contact
-										a(href="")
-											|詳しくはお問い合わせください
-							section.slider
-								ul
-									li
-						sectio.content-ttln.block-mg-md
-							h3.ttl-inner--udl-yellow
-								|Top message
-							img(src="")
-							.profile-block
-								h4
-									|島田さんメッセージ
-								p
-									|aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-								p
-									|京都大学 法学部卒 経営学修士 (MBA)
-								p
-									|三井住友銀行日本総合研究所を経て起業し現在に至る。
-								p
-									|代表取締役社長
-								p
-									|島田浩志
+									.btn-contact-wrap
+										button.btn-contact
+											a(href="")
+												|詳しくはお問い合わせください
+							section.carousel-slider-wrap
+								// Place somewhere in the <body> of your page
+								.flexslider.carousel-slider__bento
+									ul.slides
+										li
+											img(src='/images/common/kitchen_car__green.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-1.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-2.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-3.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-4.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-5.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-6.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-7.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-8.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-9.jpg')
+										li
+											img(src='http://lorempixel.com/output/food-q-c-340-200-10.jpg')
+						section#message.content-ttl.block-mg-md.section-05
+							.section-inner
+								h3.content-ttl
+									.ttl-inner--udl-yellow
+										|Top message
+								img.profile-pic(src="http://www.sprinklesandbooze.com/wp/wp-content/uploads/2013/05/Tony-Stark-1.jpg")
+								.profile-block
+									h4.message-ttl
+										|島田さんメッセージ
+									p.message-body
+										|何は大体何しろその活動児というののところにしですです。<br>
+										|いくら十月に所有観はことにその唱道でなけれかもを乗っばいだからは希望用いれなけれなて、そうにはなりたなくたいない。<br>
+										|まぐれ当りに知れですのも現に前をじっとででなら。
+									.profile-info
+										p.profile-info-body
+											|京都大学 法学部卒 経営学修士 (MBA)
+										p.profile-info-body
+											|三井住友銀行日本総合研究所を経て起業し現在に至る。
+									.profile-name
+										p.profile-name-ttl
+											|代表取締役社長
+										p.profile-name-body
+											|島田浩志
 
 
 
-		hr
-		.page-top.text-center.block-mg-md
-			a(href="#top") Page Top
-		footer
-			.block-pd-md.bg-gray-lightest
+		//- hr
+		//- .page-top.text-center.block-mg-md
+		//- 	a(href="#top") Page Top
+		footer#contact
+			.block-pd-md.bg-gray-lightest.footer-info
 				.container
 					.row
 						.col-sm-10.col-sm-offset-1
 							.footer-info-area
 								.footer-logo
+									svg.navbar-header__logo(role='img', aria-labelledby='title')
+										use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='/images/common/logo-banks.svg#logo-banks')
 								.footer-info-block
-									p
+									p.lead-txt
 										|まずはお問い合わせください
 									.cp-name
 										|株式会社OmtRak (BANKS事業部)
@@ -218,12 +279,15 @@ block body
 										dt.cp-tellist__ttl
 											|TEL:
 										dd.cp-tellist__body
-											|03-6265-0535
+											a(href="tel;0362650535")
+												|03-6265-0535
 										dd.cp-tellist__sub-body
 											|（担当：島田）
-							small
+							small.copy-right
 								|&copy; BANKS All Rights Reserved.
-	.sb-slidebar.sb-left
-		p aaaa
 block js
 	include /_include/_inc__javaScript
+	// build:js /js/banks/script.js
+	script(src='../bower_components/flexslider/jquery.flexslider-min.js')
+	script(src='/js/banks/script.js')
+	// endbuild
