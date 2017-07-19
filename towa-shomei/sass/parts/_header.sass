@@ -1,0 +1,46 @@
+@charset "utf-8"
+
+/* Header */
+
+.site-head
+	width: 100%
+	height: 80px
+	min-width: 1000px
+	position: fixed
+	left: 0
+	top: 0
+	z-index: 1000
+	background: rgba(255,255,255,.95)
+	.site-inner
+		position: relative
+		+clearfix
+	.site-logo
+		float: left
+		margin: 21px 33px 0 20px
+	.site-tele
+		position: absolute
+		right: 18px
+		top: 20px
+		line-height: 1
+		text-align: right
+		.ttl
+			margin-bottom: 8px
+
+.site-navi
+	float: left
+	width: 490px
+	margin-top: 46px
+	.nav-bar
+		+clearfix
+		li
+			float: left
+			margin-left: 36px
+			&:first-child
+				margin-left: 0
+			a
+				font-size: 14px
+				color: $primary-color
+				line-height: 1
+				&:hover
+					+opacity(0.8)
+
