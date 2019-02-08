@@ -1,0 +1,1092 @@
+<!-- purchase price list -->
+<%
+var all=[];
+all = [
+	{
+		"ttlGrade":"グレード",
+		"ttl30Kkm":"３万キロ",
+		"ttl30Kkm":"３万キロ",
+		"ttl70Kkm":"７万キロ",
+		"ttl100Kkm":"１０万キロ",
+		"list":[
+			{
+			"name":"2018年3月発売 Crossover",
+			"price30Kkm":"120.6万円",
+			"price70Kkm":"114.0万円",
+			"price100Kkm":"111.2万円"
+			},
+			{
+			"name":"2018年3月発売 G",
+			"price30Kkm":"120.6万円",
+			"price70Kkm":"114.0万円",
+			"price100Kkm":"111.2万円"
+			},
+			{
+			"name":"2018年3月発売 GGR SPORT",
+			"price30Kkm":"139.5万円",
+			"price70Kkm":"132.0万円",
+			"price100Kkm":"128.9万円"
+			}
+		]
+		<!-- "list":[
+			{
+			"name":"2018年3月発売 Crossover",
+			"price30Kkm":"120.6万円",
+			"price70Kkm":"114.0万円",
+			"price100Kkm":"111.2万円"
+			},
+			{
+			"name":"2018年3月発売 G",
+			"price30Kkm":"120.6万円",
+			"price70Kkm":"114.0万円",
+			"price100Kkm":"111.2万円"
+			},
+			{
+			"name":"2018年3月発売 GGR SPORT",
+			"price30Kkm":"139.5万円",
+			"price70Kkm":"132.0万円",
+			"price100Kkm":"128.9万円"
+			},
+			{
+			"name":"2018年3月発売 GGR SPORT･17ｲﾝﾁﾊﾟｯｹｰｼﾞ",
+			"price30Kkm":"154.1万円",
+			"price70Kkm":"146.0万円",
+			"price100Kkm":"142.6万円"
+			},
+			{
+			"name":"2018年3月発売 Gｿﾌﾄﾚｻﾞｰｾﾚｸｼｮﾝ",
+			"price30Kkm":"122.5万円",
+			"price70Kkm":"115.8万円",
+			"price100Kkm":"113.0万円"
+			},
+			{
+			"name":"2018年3月発売 L",
+			"price30Kkm":"102.3万円",
+			"price70Kkm":"96.5万",
+			"price100Kkm":"94.1万円"
+			},
+			{
+			"name":"2018年3月発売 S",
+			"price30Kkm":"109.2万円",
+			"price70Kkm":"103.1万円",
+			"price100Kkm":"100.6万円"
+			},
+			{
+			"name":"2018年3月発売 SStyle Black",
+			"price30Kkm":"115.6万円",
+			"price70Kkm":"109.2万円",
+			"price100Kkm":"106.5万円"
+			},
+			{
+			"name":"2018年3月発売 ﾘﾙｳﾞｨｰ G",
+			"price30Kkm":"141.6万円",
+			"price70Kkm":"134.0万円",
+			"price100Kkm":"130.8万円"
+			},
+			{
+			"name":"2018年3月発売 ﾘﾙｳﾞｨｰ S",
+			"price30Kkm":"130.8万円",
+			"price70Kkm":"123.7万円",
+			"price100Kkm":"120.7万円"
+			},
+			{
+			"name":"2017年6月発売 Crossover",
+			"price30Kkm":"113.4万円",
+			"price70Kkm":"106.8万円",
+			"price100Kkm":"104.0万円"
+			},
+			{
+			"name":"2017年5月発売 G",
+			"price30Kkm":"112.5万円",
+			"price70Kkm":"105.9万円",
+			"price100Kkm":"103.1万円"
+			},
+			{
+			"name":"2017年10月発売 GGR SPORT",
+			"price30Kkm":"135.3万円",
+			"price70Kkm":"127.8万円",
+			"price100Kkm":"124.6万円"
+			},
+			{
+			"name":"2017年10月発売 GGR SPORT･17ｲﾝﾁﾊﾟｯｹｰｼﾞ",
+			"price30Kkm":"149.5万円",
+			"price70Kkm":"141.3万円",
+			"price100Kkm":"137.9万円"
+			},
+			{
+			"name":"2017年5月発売 Gｿﾌﾄﾚｻﾞｰｾﾚｸｼｮﾝ",
+			"price30Kkm":"114.3万円",
+			"price70Kkm":"107.6万円",
+			"price100Kkm":"104.8万円"
+			},
+			{
+			"name":"2017年5月発売 L",
+			"price30Kkm":"94.6万円",
+			"price70Kkm":"88.9万円",
+			"price100Kkm":"86.5万円"
+			},
+			{
+			"name":"2017年5月発売 S",
+			"price30Kkm":"101.1万円",
+			"price70Kkm":"95.1万円",
+			"price100Kkm":"92.5万円"
+			},
+			{
+			"name":"2017年10月発売 SStyle Black",
+			"price30Kkm":"110.2万円",
+			"price70Kkm":"103.9万円",
+			"price100Kkm":"101.2万円"
+			},
+			{
+			"name":"2016年4月発売 SStyle Black",
+			"price30Kkm":"97.1万円",
+			"price70Kkm":"90.7万円",
+			"price100Kkm":"88.0万円"
+			},
+			{
+			"name":"2015年10月発売 G",
+			"price30Kkm":"90.7万円",
+			"price70Kkm":"84.2万円",
+			"price100Kkm":"81.5万円"
+			},
+			{
+			"name":"2015年10月発売 G(ｼｬｲﾆｰﾃﾞｺﾚｰｼｮﾝ)",
+			"price30Kkm":"91.3万円",
+			"price70Kkm":"84.8万円",
+			"price100Kkm":"82.0万円"
+			},
+			{
+			"name":"2015年10月発売 GG's",
+			"price30Kkm":"114.7万円",
+			"price70Kkm":"106.9万円",
+			"price100Kkm":"103.6万円"
+			},
+			{
+			"name":"2015年10月発売 Gﾌﾞﾗｯｸｿﾌﾄﾚｻﾞｰｾﾚｸｼｮﾝ",
+			"price30Kkm":"95.3万円",
+			"price70Kkm":"88.5万円",
+			"price100Kkm":"85.7万円"
+			},
+			{
+			"name":"2015年10月発売 Gﾌﾞﾗｯｸｿﾌﾄﾚｻﾞｰｾﾚｸｼｮﾝ(ｼｬｲﾆｰﾃﾞｺﾚｰｼｮﾝ)",
+			"price30Kkm":"95.9万円",
+			"price70Kkm":"89.1万円",
+			"price100Kkm":"86.3万円"
+			},
+			{
+			"name":"2015年10月発売 L",
+			"price30Kkm":"77.0万円",
+			"price70Kkm":"71.4万円",
+			"price100Kkm":"69.0万円"
+			},
+			{
+			"name":"2015年10月発売 S",
+			"price30Kkm":"84.0万円",
+			"price70Kkm":"77.9万円",
+			"price100Kkm":"75.3万円"
+			},
+			{
+			"name":"2015年10月発売 S(ｼｬｲﾆｰﾃﾞｺﾚｰｼｮﾝ)",
+			"price30Kkm":"84.6万円",
+			"price70Kkm":"78.5万円",
+			"price100Kkm":"75.9万円"
+			},
+			{
+			"name":"2015年10月発売 X-URBAN",
+			"price30Kkm":"95.8万円",
+			"price70Kkm":"89.1万円",
+			"price100Kkm":"86.2万円"
+			},
+			{
+			"name":"2015年10月発売 X-URBANSolid",
+			"price30Kkm":"98.9万円",
+			"price70Kkm":"92.0万円",
+			"price100Kkm":"89.1万円"
+			},
+			{
+			"name":"2014年11月発売 G",
+			"price30Kkm":"77.2万円",
+			"price70Kkm":"70.9万円",
+			"price100Kkm":"68.3万円"
+			},
+			{
+			"name":"2014年11月発売 GG's",
+			"price30Kkm":"98.9万円",
+			"price70Kkm":"91.3万円",
+			"price100Kkm":"88.0万円"
+			},
+			{
+			"name":"2014年11月発売 Gﾌﾞﾗｯｸｿﾌﾄﾚｻﾞｰｾﾚｸｼｮﾝ",
+			"price30Kkm":"81.3万円",
+			"price70Kkm":"74.8万円",
+			"price100Kkm":"72.0万円"
+			},
+			{
+			"name":"2014年11月発売 L",
+			"price30Kkm":"67.6万円",
+			"price70Kkm":"61.9万円",
+			"price100Kkm":"59.6万円"
+			},
+			{
+			"name":"2014年11月発売 S",
+			"price30Kkm":"73.9万円",
+			"price70Kkm":"67.8万円",
+			"price100Kkm":"65.2万円"
+			},
+			{
+			"name":"2014年11月発売 X-URBAN",
+			"price30Kkm":"81.8万円",
+			"price70Kkm":"75.3万円",
+			"price100Kkm":"72.5万円"
+			}
+		] -->
+	}
+]
+%>
+
+<!-- head -->
+<%- include('../../../_head',{title:"ホンダ　フィット　買取・査定相場｜買取カービュー　車買取の情報サイト",css:"souba/make/model/style.css",bodyclass:""}) %>
+
+<!-- header -->
+<%- include('../../../_header') %>
+
+<!-- breadcrumbs -->
+<nav>
+	<ol class="breadcrumbs-area">
+		<li class="breadcrumbs-list"><a href="/sp/"><span class="ficon-home"></span></a></li>
+		<li class="breadcrumbs-list"><a href="/sp/souba/">買取相場について調べる</a></li>
+		<li class="breadcrumbs-list"><a href="/sp/souba/make/">ホンダ</a></li>
+		<li class="breadcrumbs-list">フィット</li>
+	</ol>
+</nav>
+
+<!-- main content -->
+<div class="mv-area">
+	<section>
+		<h2 class="ttl-page">ホンダ　フィット　買取・査定相場</h2>
+		<div class="mv-area-inner">
+			<div class="assessment-example-box">
+				<div class="assessment-example-group">
+					<div class="assessment-example-list">
+						<div class="assessment-example-list-ttl">
+							<h3 class="ttl-block">2018年8月のフィット買取・査定相場</h3>
+						</div>
+						<p class="assessment-example-car-photo"><img src="/img/common/img_timing_to_sell.svg" width="110" height="110"
+								alt="" class="ico-timing-to-sell"><img src="/img/common/no-image.jpg" width="720" height="480" alt="トヨタ プリウス"></p>
+						<div class="assessment-example-car-info">
+							<dl class="example-car-info-group">
+								<dt class="example-car-info-ttl">平均売却年数：</dt>
+								<dd class="example-car-info-body">8年</dd>
+							</dl>
+							<dl class="example-car-info-group">
+								<dt class="example-car-info-ttl">平均走行距離：</dt>
+								<dd class="example-car-info-body">85,001km～90,000km</dd>
+							</dl>
+							<dl class="example-car-info-group">
+								<dt class="example-car-info-ttl">平均売却価格：</dt>
+								<dd class="example-car-info-body">60.7万円</dd>
+							</dl>
+							<dl class="example-car-info-group">
+								<dt class="example-car-info-ttl"><span class="txt-ajust">査定満足度</span>：</dt>
+								<dd class="example-car-info-body"><span class="review-star"><span class="ficon-star"></span><span class="ficon-star"></span><span
+											class="ficon-star"></span><span class="ficon-star_half"></span><span class="ficon-star_border"></span></span>3.5</dd>
+							</dl>
+						</div>
+						<p class="assessment-example-car-price">一括査定利用で平均<span class="col-red"><span class="fsize-24">17.6</span>万円</span>お得！</p>
+					</div>
+				</div>
+			</div>
+			<p class="mv-cc-txt module-before-txt">車売却の基本は<span class="col-ttlblue fsize-20">比較</span>！<br>口コミ以上の<span class="col-red fsize-20">高値</span>を目指そう！<span
+					class="ani-arrow-down"></span></p>
+		</div>
+	</section>
+</div><!-- mv-area end -->
+
+<main>
+	<div class="content">
+		<div class="main-content">
+
+			<!-- assess form -->
+			<article>
+				<div class="content-node">
+					<div id="assess-step01" class="assessment-module-block">
+						<img src="/img/common/img_use_record.svg" width="114" height="113" alt="利用者400万人突破！" class="ico-use-record">
+						<h3 class="assessment-module-ttl">お申込みは<span class="fsize-22">1</span>分！カンタン<span class="fsize-22">3</span>ステップ！</h3>
+						<div class="assessment-module-body">
+							<form action="" method="post">
+								<div class="assessment-module-form-box">
+									<dl class="assessment-module-form-row">
+										<dt class="assessment-module-form-row-ttl">メーカー</dt>
+										<dd class="assessment-module-form-row-body">
+											<select id="ddlMaker">
+												<%- include('../../../../_assess_form__ddl_option/_ddlMaker') %>
+											</select>
+										</dd>
+									</dl>
+									<dl class="assessment-module-form-row">
+										<dt class="assessment-module-form-row-ttl">モデル</dt>
+										<dd class="assessment-module-form-row-body">
+											<select id="ddlModel">
+												<%- include('../../../../_assess_form__ddl_option/_ddlModel') %>
+											</select>
+										</dd>
+									</dl>
+									<dl class="assessment-module-form-row">
+										<dt class="assessment-module-form-row-ttl">年式</dt>
+										<dd class="assessment-module-form-row-body">
+											<select id="ddlYear">
+												<%- include('../../../../_assess_form__ddl_option/_ddlYear') %>
+											</select>
+										</dd>
+									</dl>
+									<dl class="assessment-module-form-row">
+										<dt class="assessment-module-form-row-ttl">走行距離(km)</dt>
+										<dd class="assessment-module-form-row-body">
+											<select id="ddlMileage">
+												<%- include('../../../../_assess_form__ddl_option/_ddlMileage') %>
+											</select>
+										</dd>
+									</dl>
+								</div>
+								<div class="assesment-btn-box">
+									<a href="/sp/entry/normal/kcv/001/" class="btn-cv">
+										<span class="ico-free">無料</span>
+										<span class="cv-btn-txt">カンタンWEB申込みスタート</span>
+										<span class="cv-steps-flow-box"><span class="cv-steps-flow-cell">車種情報入力</span><span class="cv-steps-flow-cell">お客様情報入力</span><span
+												class="cv-steps-flow-cell">確認画面</span></span>
+										<span class="ficon-keyboard_arrow_right ico-arrow"></span>
+									</a>
+								</div>
+								<div class="assesment-other-service-box">
+									<a href="/sp/jiko/"><span class="ficon-keyboard_arrow_right ico-arrow"></span>事故車(不動車)はこちら</a>
+									<a href="/sp/commercial-car/"><span class="ficon-keyboard_arrow_right ico-arrow"></span>商用車(バス・トラック等)はこちら</a>
+								</div>
+								<dl class="assesment-tel-box">
+									<dt class="assesment-tel-ttl">電話申込みは<br>こちら</dt>
+									<dd class="assesment-tel-body">
+										<span class="assesment-tel-num">0120-532-210</span>
+										<span class="assesment-tel-free">通話料無料(携帯電話からも無料)</span>
+										<span class="assesment-tel-time">受付時間：10:00～19:00<br>(年末年始を除き年中無休)</span>
+									</dd>
+								</dl>
+								<dl class="assessment-jpuc-box">
+									<dt class="assessment-jpuc-ttl"><img src="/img/icon/ico_jpucmark.svg" width="60" height="44" alt="JPUC"></dt>
+									<dd class="assessment-jpuc-body">カービューは、一般社団法人日本自動車購入協会のウェブサイト監修を受けています。</dd>
+								</dl>
+							</form>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- 買取口コミ（実際に●●を査定したユーザーのレビュー） -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">口コミで買取相場を調べる</h2>
+					<div class="review-list-area">
+
+						<!-- pickup-review -->
+						<a href="/sp/souba/make/model/reviews/">
+							<div class="review-list-area-inner pickup-review clearfix">
+								<div class="review-supplement-info-block">
+									<p class="review-pickup-ico-box">ピックアップ口コミ</p>
+									<p class="review-user-name-box">50代男性</p>
+									<p class="review-days-box">査定時期：2015年10月</p>
+								</div>
+								<div class="review-main-info-block">
+									<div class="review-sell-price-box">
+										<dl class="review-sell-price-list">
+											<dt class="review-sell-price-list-ttl">最高売却額</dt>
+											<dd class="review-sell-price-list-body">
+												<span class="fsize-24">70.0</span>万円
+											</dd>
+										</dl>
+									</div>
+									<div class="review-difference-box">
+										<dl class="review-difference-list">
+											<dt class="review-difference-list-ttl">差額</dt>
+											<dd class="review-difference-list-body">
+												<span class="fsize-24">120.5</span>万円
+												<span class="review-difference-list-body-supplement">(査定会社数：8社)</span>
+											</dd>
+										</dl>
+									</div>
+									<div class="review-spec-box">
+										<dl class="review-spec-list">
+											<dt class="review-spec-list-ttl">グレード</dt>
+											<dd class="review-spec-list-body">G“ツーリングセレクション”(CVT_1.5)</dd>
+										</dl>
+										<dl class="review-spec-list">
+											<dt class="review-spec-list-ttl">年式</dt>
+											<dd class="review-spec-list-body">2007年/平成19年</dd>
+										</dl>
+										<dl class="review-spec-list">
+											<dt class="review-spec-list-ttl">走行距離</dt>
+											<dd class="review-spec-list-body">65,001km～70,000km</dd>
+										</dl>
+										<dl class="review-spec-list">
+											<dt class="review-spec-list-ttl">査定満足度</dt>
+											<dd class="review-spec-list-body"><span class="review-star"><span class="ficon-star"></span><span class="ficon-star"></span><span
+														class="ficon-star"></span><span class="ficon-star_half"></span><span class="ficon-star_border"></span></span>3.5</dd>
+										</dl>
+									</div>
+								</div>
+								<div class="review-outline-block">
+									<p class="ellipsis">売却後にエンジン系統に不具合があった場合の保険、入金予定、車の引き取り日、料金など詳しい説明があった。
+										他の会社は、いざ取引になったとき、販売部の査定をもう一度させていただきたい。<br>
+										とか引き取り手数料は差し引きとか、後から言ってきたのに対しガリバーは、２０８万は振込金額だと、はっきり言ってくれた。<br>
+										他社と比べ、営業担当者が、とにかく紳士だった。</p>
+								</div>
+								<p class="review-detail-link-txt"><span class="ficon-keyboard_arrow_right ico-arrow"></span>この口コミの詳細を見る</p>
+							</div>
+						</a>
+
+						<!-- review -->
+						<% for (var i = 0; i < 2; i++) { %>
+						<a href="/sp/souba/make/model/reviews/">
+							<div class="review-list-area-inner clearfix">
+								<div class="review-supplement-info-block">
+									<p class="review-user-name-box">50代男性</p>
+									<p class="review-days-box">査定時期：2015年10月</p>
+								</div>
+								<div class="review-main-info-block">
+									<div class="review-sell-price-box">
+										<dl class="review-sell-price-list">
+											<dt class="review-sell-price-list-ttl">最高売却額</dt>
+											<dd class="review-sell-price-list-body">
+												<span class="fsize-24">70.0</span>万円
+											</dd>
+										</dl>
+									</div>
+									<div class="review-difference-box">
+										<dl class="review-difference-list">
+											<dt class="review-difference-list-ttl">差額</dt>
+											<dd class="review-difference-list-body">
+												<span class="fsize-24">20.5</span>万円
+												<span class="review-difference-list-body-supplement">(査定会社数：8社)</span>
+											</dd>
+										</dl>
+									</div>
+									<div class="review-spec-box">
+										<dl class="review-spec-list">
+											<dt class="review-spec-list-ttl">グレード</dt>
+											<dd class="review-spec-list-body">G“ツーリングセレクション”(CVT_1.5)</dd>
+										</dl>
+										<dl class="review-spec-list">
+											<dt class="review-spec-list-ttl">年式</dt>
+											<dd class="review-spec-list-body">2007年/平成19年</dd>
+										</dl>
+										<dl class="review-spec-list">
+											<dt class="review-spec-list-ttl">走行距離</dt>
+											<dd class="review-spec-list-body">65,001km～70,000km</dd>
+										</dl>
+										<dl class="review-spec-list">
+											<dt class="review-spec-list-ttl">査定満足度</dt>
+											<dd class="review-spec-list-body"><span class="review-star"><span class="ficon-star"></span><span class="ficon-star"></span><span
+														class="ficon-star"></span><span class="ficon-star_half"></span><span class="ficon-star_border"></span></span>3.5</dd>
+										</dl>
+									</div>
+								</div>
+								<p class="review-detail-link-txt"><span class="ficon-keyboard_arrow_right ico-arrow"></span>この口コミの詳細を見る</p>
+							</div>
+						</a>
+						<% } %>
+					</div>
+					<!-- pager -->
+					<nav>
+						<ol class="pager-nav">
+							<li class="pager-nav-list"><a href="/sp/souba/make/model/" class="pager-nav-list-btn">前へ</a></li>
+							<li class="pager-nav-list"><a href="/sp/souba/make/model/" class="pager-nav-list-btn">1</a></li>
+							<li class="pager-nav-list"><a href="/sp/souba/make/model/" class="pager-nav-list-btn">2</a></li>
+							<li class="pager-nav-list"><span class="pager-nav-list-btn">3</span></li>
+							<li class="pager-nav-list"><a href="/sp/souba/make/model/" class="pager-nav-list-btn">4</a></li>
+							<li class="pager-nav-list"><a href="/sp/souba/make/model/" class="pager-nav-list-btn">次へ</a></li>
+						</ol>
+					</nav>
+					<p class="module-before-txt">売却相場を調べて賢く売却<br>
+						<span class="txt-strong">3社以上の比較で<span class="col-red">平均16万円</span>アップ！<span class="fsize-10">※2</span><span
+								class="ani-arrow-down"></span></span>
+					</p>
+					<p><a href="#assess-step01" class="btn-cv scroll-a">
+							<span class="cv-btn-txt assessment-lead">最大8社の買取店が一括査定！<br>無料申込みはこちらから！</span>
+							<span class="ficon-keyboard_arrow_right ico-arrow"></span></a>
+					</p>
+				</div>
+			</article>
+
+			<!-- 買取価格相場表 -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">アクア　買取価格相場表（6月13日更新）</h2>
+					<table class="market-simulate-result-tbl">
+						<caption>グレード・走行距離別　中古車買取価格表</caption>
+						<% all.forEach(function(value, key){ %>
+						<thead>
+							<tr>
+								<th><%-value.ttlGrade%></th>
+								<th><%-value.ttl30Kkm%></th>
+								<th><%-value.ttl70Kkm%></th>
+								<th><%-value.ttl100Kkm%></th>
+							</tr>
+						</thead>
+						<tbody>
+							<% value.list.forEach(function(values, keys){ %>
+							<tr>
+								<td><%-values.name%></td>
+								<td><%-values.price30Kkm%></td>
+								<td><%-values.price70Kkm%></td>
+								<td><%-values.price100Kkm%></td>
+							</tr>
+							<% }); %>
+						</tbody>
+						<% }); %>
+					</table>
+				</div>
+			</article>
+
+			<!-- 買取相場シミュレータ -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">シミュレータで買取相場を調べる</h2>
+					<p>国内のあらゆるマーケットデータを元にカービューが独自に算出したものです。<br>
+						実際の車のグレード・コンディションなどにより異なる場合があることをご了承ください。</p>
+					<section>
+						<div class="market-simulate-area">
+							<div class="market-simulate-item-block">
+								<form action="">
+									<dl class="market-simulate-item-box">
+										<dt class="market-simulate-item-box-ttl">年式</dt>
+										<dd class="market-simulate-item-box-body">
+											<select id="simu_hatubai" name="simu_hatubai">
+												<%- include('../../../../_assess_form__ddl_option/_ddlYear') %>
+											</select>
+										</dd>
+									</dl>
+									<dl class="market-simulate-item-box">
+										<dt class="market-simulate-item-box-ttl">グレード</dt>
+										<dd class="market-simulate-item-box-body">
+											<select id="simu_grade" name="simu_grade">
+													<%- include('../../../../_market_simulator/_ddlGrade') %>
+											</select>
+										</dd>
+									</dl>
+									<dl class="market-simulate-item-box">
+										<dt class="market-simulate-item-box-ttl">初度登録 年</dt>
+										<dd class="market-simulate-item-box-body">
+											<select id="simu_year" name="simu_year">
+												<%- include('../../../../_market_simulator/_ddlYear') %>
+											</select>
+										</dd>
+									</dl>
+									<dl class="market-simulate-item-box">
+										<dt class="market-simulate-item-box-ttl">初度登録 月</dt>
+										<dd class="market-simulate-item-box-body">
+											<select id="simu_month" name="simu_month">
+												<%- include('../../../../_market_simulator/_ddlMonth') %>
+											</select>
+										</dd>
+									</dl>
+									<dl class="market-simulate-item-box">
+										<dt class="market-simulate-item-box-ttl">色</dt>
+										<dd class="market-simulate-item-box-body">
+											<select id="simu_color" name="simu_color">
+													<%- include('../../../../_market_simulator/_ddlColor') %>
+											</select>
+										</dd>
+									</dl>
+									<dl class="market-simulate-item-box">
+										<dt class="market-simulate-item-box-ttl">走行距離</dt>
+										<dd class="market-simulate-item-box-body">
+											<input id="simu_mileage" name="simu_mileage" value="50000" type="text">
+										</dd>
+									</dl>
+									<p class="market-simulate-search-btn-box"><input type="button" value="調べる" class="btn-blue"></p>
+								</form>
+								<div class="market-simulate-result-block">
+									<table class="market-simulate-result-tbl">
+										<caption>シミュレーション結果</caption>
+										<thead>
+											<tr>
+												<th></th>
+												<th>現在</th>
+												<th>1年後</th>
+												<th>2年後</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>現在の走行距離</td>
+												<td>200.0万円</td>
+												<td>200.0万円</td>
+												<td>200.0万円</td>
+											</tr>
+											<tr>
+												<td>+1万km</td>
+												<td>200.0万円</td>
+												<td>200.0万円</td>
+												<td>200.0万円</td>
+											</tr>
+											<tr>
+												<td>+2万km</td>
+												<td>200.0万円</td>
+												<td>200.0万円</td>
+												<td>200.0万円</td>
+											</tr>
+										</tbody>
+									</table>
+									<p class="module-before-txt">車の状態や買取店ニーズによって価格は変動します。実際に査定してもらおう！<span class="ani-arrow-down"></span></p>
+
+									<!-- assess form -->
+									<div class="assessment-module-block">
+										<div class="assessment-module-body">
+											<form action="" method="post">
+												<div class="assessment-module-form-box">
+													<dl class="assessment-module-form-row">
+														<dt class="assessment-module-form-row-ttl">郵便番号</dt>
+														<dd class="assessment-module-form-row-body">
+															〒
+															<input type="text" maxlength="7" class="input-zip" autocomplete="postal-code"><br>
+															<a href="#zip-advanced" class="fsize-12 btn-ybox-open">※郵便番号が不明な方はこちら</a>
+														</dd>
+													</dl>
+												</div>
+												<div class="assesment-btn-box">
+													<a href="/sp/entry/normal/kcv/001/" class="btn-cv">
+														<span class="ico-free">無料</span>
+														<span class="cv-btn-txt">カンタンWEB申込みスタート</span>
+														<span class="cv-steps-flow-box"><span class="cv-steps-flow-cell">車種情報入力</span><span class="cv-steps-flow-cell">お客様情報入力</span><span
+																class="cv-steps-flow-cell">確認画面</span></span>
+														<span class="ficon-keyboard_arrow_right ico-arrow"></span>
+													</a>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</article>
+
+			<!-- ヤフオク!落札相場 -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section"><span class="section-word">ワゴンR ヤフオク!落札価格を調べる</span></h2>
+					<p class="mb-20">車の売却は、買取店がお得？ネットオークションがお得？ヤフオク!の落札相場を確認して、売却方法を検討しよう！</p>
+					<dl class="y-auction-desc">
+						<dt class="y-auction-desc__ttl">
+							落札価格の概要
+							<span class="size-xxsmall">(2017年7月6日調べ)</span>
+						</dt>
+						<dd class="y-auction-desc__item">最安：1円</dd>
+						<dd class="y-auction-desc__item">平均：121,761円</dd>
+						<dd class="y-auction-desc__item">最高：1,481,482円</dd>
+						<dd class="y-auction-desc__item"></dd>
+					</dl>
+					<span class="txt-strong">
+					</span>
+					<div class="review-list-area">
+						<% for (var i = 0; i < 2; i++) { %>
+						<div class="review-list-area-inner">
+							<div class="review-main-info-block">
+								<div class="review-spec-box">
+									<dl class="review-spec-list"><dt class="review-spec-list-ttl">落札時期</dt>
+										<dd class="review-spec-list-body">2017年7月</dd>
+									</dl>
+									<dl class="review-spec-list"><dt class="review-spec-list-ttl">グレード</dt>
+										<dd class="review-spec-list-body">116,300 km</dd>
+									</dl>
+									<dl class="review-spec-list"><dt class="review-spec-list-ttl">カラー</dt>
+										<dd class="review-spec-list-body">クロ系</dd>
+									</dl>
+									<dl class="review-spec-list"><dt class="review-spec-list-ttl">年式</dt>
+										<dd class="review-spec-list-body">平成14年(2002年)</dd>
+									</dl>
+									<dl class="review-spec-list"><dt class="review-spec-list-ttl">走行距離</dt>
+										<dd class="review-spec-list-body">94,808 km</dd>
+									</dl>
+								</div>
+								<div class="review-difference-box">
+									<dl class="review-difference-list"><dt class="review-difference-list-ttl">落札額</dt>
+										<dd class="review-difference-list-body"><span class="fsize-24">54,000円</span><span class="review-difference-list-body-supplement">(入札数：1)</span></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+						<% } %>
+					</div>
+					<p class="node-end-link"><a href="http://closedsearch.auctions.yahoo.co.jp/jp/closedsearch?auccat=26360&amp;brand_id=31893"
+							target="_blank"><span class="ficon-keyboard_arrow_right ico-arrow"></span>ヤフオク!でワゴンRの出品状況を確認する</a></p>
+				</div>
+			</article>
+
+			<!-- おすすめの口コミ -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">おすすめの口コミ</h2>
+					<div class="review-list-area">
+						<% for (var i = 0; i < 2; i++) { %>
+						<div class="review-list-area-inner clearfix">
+							<div class="review-supplement-info-block">
+								<p class="review-user-name-box">50代男性</p>
+								<p class="review-days-box">査定時期：2015年10月</p>
+							</div>
+							<div class="review-main-info-block">
+								<div class="review-assessment-price-box">
+									<dl class="review-sell-price-list">
+										<dt class="review-sell-price-list-ttl">各社査定額</dt>
+										<dd class="review-sell-price-list-body">
+											<span class="fsize-24">70.0</span>万円<span class="col-black txt-normal">～</span>
+											<span class="fsize-24">110.0</span>万円
+										</dd>
+									</dl>
+								</div>
+								<div class="review-difference-box">
+									<dl class="review-difference-list">
+										<dt class="review-difference-list-ttl">差額</dt>
+										<dd class="review-difference-list-body">
+											<span class="fsize-24">20.5</span>万円
+											<span class="review-difference-list-body-supplement">(査定会社数：8社)</span>
+										</dd>
+									</dl>
+								</div>
+								<div class="review-spec-box">
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">グレード</dt>
+										<dd class="review-spec-list-body">G“ツーリングセレクション”(CVT_1.5)</dd>
+									</dl>
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">年式</dt>
+										<dd class="review-spec-list-body">2007年/平成19年</dd>
+									</dl>
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">走行距離</dt>
+										<dd class="review-spec-list-body">65,001km～70,000km</dd>
+									</dl>
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">査定満足度</dt>
+										<dd class="review-spec-list-body"><span class="review-star"><span class="ficon-star"></span><span class="ficon-star"></span><span
+													class="ficon-star"></span><span class="ficon-star_half"></span><span class="ficon-star_border"></span></span>3.5</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="review-outline-block">
+								売却後にエンジン系統に不具合があった場合の保険、入金予定、車の引き取り日、料金など詳しい説明があった。 他の会社は、いざ取引になったとき、販売部の査定をもう一度させていただきたい。<br>
+								とか引き取り手数料は差し引きとか、後から言ってきたのに対しガリバーは、２０８万は振込金額だと、はっきり言ってくれた。<br>
+								他社と比べ、営業担当者が、とにかく紳士だった。
+							</div>
+						</div>
+						<% } %>
+					</div>
+				</div>
+			</article>
+
+			<!-- SEOコンテンツ（売却ポイント） -->
+			<dl class="mv-review-sell-point-block">
+				<dt class="mv-review-eval-box-ttl">ホンダ フィット 売却ポイント</dt>
+				<dd class="mv-review-outline-block">
+					<p>ホンダを代表するコンパクトカーのフィット。<br>
+						トヨタヴィッツ、日産マーチと並び、コンパクトカー御三家と呼ばれるほどの人気モデルです。<br>
+						コンパクトカーとは思えないほどの広い室内空間を持ち、女性や若いファミリー層から支持されています。<br>
+						販売台数が多いが故に車の状態やボディカラー、オプション装備などで査定額に大きな差が付くため、早めに査定してみることをおススメします。</p>
+				</dd>
+			</dl>
+
+			<!-- SEOコンテンツ（●●はどんな車？　アコーディオンにする） -->
+			<article>
+					<div class="content-node comment-module">
+						<h1 class="comment-module-h1"><span>ハイブリッドシステムを普及・昇華させた「プリウス」</span></h1>
+						<h2 class="comment-module-h2"><span>プリウスはどんな車？</span></h2>
+						<h3 class="comment-module-h3"><span>空力特性も話題になったハイブリッド車</span></h3>「21世紀に間に合いました」のキャッチコピーで初代プリウスがデビューしたのは1997年。低燃費、低エミッションを特徴とする世界初の量産ハイブリッドカー。初代は5ナンバーサイズの4ドアセダンだったが、2003年に登場した2代目はボディサイズを拡大、空力特性を意識した「トライアングルモノフォルム」を特徴とする3ナンバーの5ドアハッチバックとなった。ハイブリッドシステムも先代の「THS」から「THSⅡ」に発展し、モーター出力を33kW（初期モデルは30kW）から50kWに高めて走行性能を向上させている。燃費もライバルを大きくリードする35.5㎞/L（10・15モード）を実現した。<br><br>
+						<h3 class="comment-module-h3"><span>3代目プリウスは高速走行時の燃費が更に向上し、先進設備も導入</span></h3>2009年デビューの3代目は先代のシルエットを受け継ぎ、ボディサイズをわずかに拡大。システムを一新した「リダクション機構付きTHSⅡ」を採用し、エンジンを1.5リッターから1.8リッターに拡大。エンジン性能の向上とモーターの出力アップ（60kW）、さらに空力性能の向上などにより、とくに高速走行時の燃費向上が図られた。また、電動式冷却水ポンプ、排気熱再循環式ヒーターシステムなどの燃費向上対策により、一部グレードで38.0㎞/L（10・15モード）の経済性を実現。室内空間やラゲッジルーム容量も拡大しており、ソーラーパネルで発電した電力を用いて室内を換気する「ソーラーベンチレーションシステム」や乗車直前のリモコン操作でエアコンを作動させて「リモートエアコンシステム」などの先進装備も設定された。<br><br>
+						<h3 class="comment-module-h3"><span>プラットフォームが一新された4代目プリウス</span></h3>現行の4代目プリウスは2015年に登場した。2代目から続くトライアングルシルエットは継承されつつ、プラットフォームを一新。「TNGA（トヨタニューグローバルアーキテクチャー）」というクルマ造りの構造改革により大幅な低重心化を実現し、リヤにダブルウィッシュボーン式サスペンションを採用するなど、スポーティな操縦性と快適な乗り心地を両立させている。4代目でのハイブリッドシステムは小型・軽量・低損失化を行い、燃費とスペース効率の向上を実現。ベースグレードのEでは40.8㎞/L、その他の2WDでも37.2㎞/L（いずれもJC08モード）の燃費性能を実現。後輪をモーター駆動（E-Four）としたプリウス初の4WD（燃費は34.0㎞/L）もラインアップされている。
+					</div>
+				</article>
+
+			<!-- 一括査定ご利用ユーザー様の声 -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">一括査定ご利用ユーザー様の声</h2>
+					<div class="review-list-area">
+						<% for (var i = 0; i < 2; i++) { %>
+						<div class="review-list-area-inner clearfix">
+							<div class="review-main-info-block">
+								<div class="review-photo-box">
+									<figure>
+										<img src="/img/common/no-image.jpg" width="720" height="480" alt="トヨタ プリウス">
+									</figure>
+								</div>
+								<div class="review-sell-price-box uservoice">
+									<dl class="review-sell-price-list">
+										<dt class="review-sell-price-list-ttl">実際の査定金額</dt>
+										<dd class="review-sell-price-list-body">
+											<span class="fsize-24">70.0</span>万円
+										</dd>
+									</dl>
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">査定会社数</dt>
+										<dd class="review-spec-list-body">5社</dd>
+									</dl>
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">査定満足度</dt>
+										<dd class="review-spec-list-body"><span class="review-star"><span class="ficon-star"></span><span class="ficon-star"></span><span
+													class="ficon-star"></span><span class="ficon-star_half"></span><span class="ficon-star_border"></span></span>3.5</dd>
+									</dl>
+								</div>
+								<div class="review-spec-box">
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">メーカー</dt>
+										<dd class="review-spec-list-body"><a href="/sp/souba/make/">トヨタ</a></dd>
+									</dl>
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">車種</dt>
+										<dd class="review-spec-list-body"><a href="/sp/souba/make/model/">カローラ</a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="review-outline-block">
+								<p>オートバックスの担当者の対応や説明が良心的で、査定額を前提なしに短時間で提示し、大変信頼できると思った。当初はほぼこちらに決めていた。しかし、最後になってビッグモーターからさらに高い金額が示されたので、決めた。</p>
+							</div>
+						</div>
+						<% } %>
+					</div>
+					<p class="module-before-txt">売却相場を調べて賢く売却<br>
+						<span class="txt-strong">3社以上の比較で<span class="col-red">平均16万円</span>アップ！<span class="fsize-10">※2</span><span
+								class="ani-arrow-down"></span></span></p>
+					<p><a href="#assess-step01" class="btn-cv scroll-a">
+							<span class="cv-btn-txt assessment-lead">最大8社の買取店が一括査定！<br>無料申込みはこちらから！</span>
+							<span class="ficon-keyboard_arrow_right ico-arrow"></span></a>
+					</p>
+				</div>
+			</article>
+
+			<!-- 買取サービスの流れ -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">買取サービスの流れ</h2>
+					<ol class="serviceflow-area">
+						<li class="serviceflow-list">
+							<p class="serviceflow-ttl">①WEBまたは電話でお申込み</p>
+							<p class="serviceflow-body">
+								<span class="serviceflow-img"><img src="/img/common/img_serviceflow01.png" width="210" height="76" alt=""></span>
+								<span class="serviceflow-txt">お車やご連絡先の情報をもとに、条件に合った査定会社を最大８社までご紹介。その中から実際に査定を受けたい会社を選んで（複数社選択可）ください。</span>
+							</p>
+							<span class="ficon-arrow_downward step-arrow"></span>
+						</li>
+						<li class="serviceflow-list">
+							<p class="serviceflow-ttl">②カービューより確認メール</p>
+							<p class="serviceflow-body">
+								<span class="serviceflow-img"><img src="/img/common/img_serviceflow02.png" width="210" height="76" alt=""></span>
+								<span class="serviceflow-txt">株式会社カービューより、ご登録いただいたメールアドレス宛てに確認メールが送信されます。24時間以内にメールが届かない場合は<a href="/sp/guide/faq/">よくあるご質問</a>をご確認ください。</span>
+							</p>
+							<span class="ficon-arrow_downward step-arrow"></span>
+						</li>
+						<li class="serviceflow-list">
+							<p class="serviceflow-ttl">③査定会社よりご連絡</p>
+							<p class="serviceflow-body">
+								<span class="serviceflow-img"><img src="/img/common/img_serviceflow03.png" width="210" height="76" alt=""></span>
+								<span class="serviceflow-txt">各査定会社よりお客様に、2営業日以内にご連絡。電話もしくはメールにて、愛車の相場情報や出張査定のご案内などをお知らせいたします。</span>
+							</p>
+						</li>
+					</ol>
+				</div>
+			</article>
+
+			<!-- 車買取・査定　徹底ガイド -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">車買取・査定　徹底ガイド</h2>
+					<ul class="guide-thumb-area">
+						<% for (var i = 0; i < 2; i++) { %>
+						<li class="guide-thumb-list">
+							<a href="/sp/guide/beginner/guide01/">
+								<figure>
+									<span class="guide-thumb-img"><img src="/img/sp/guide/beginner/img_begginer_guide01_thumb_sp.png" width="272"
+											height="152" alt="なぜ同じクルマなのに査定額に差が出るの？"></span>
+									<figcaption>
+										なぜ同じクルマなのに査定額に差が出るの？
+									</figcaption>
+								</figure>
+								<p class="guide-thumb-list-box">
+									<span class="guide-thumb-list-box-body">車の買取額は、買取店の販売ルートや在庫状況によって異なります。<br>
+										一言で買取店と言っても、国内中古車販売店、スポーツカー専門店・輸出業者等様々な業種が混ざっています。業種ごとにニーズが異なるため買取店の販売ルートに近い車種ほど高値で買い取ってくれます。</span>
+									<span class="guide-thumb-list-box-link"><span class="ficon-keyboard_arrow_right ico-arrow"></span>詳細を見る</span>
+								</p>
+							</a>
+						</li>
+						<% } %>
+					</ul>
+					<p class="node-end-link"><a href="/sp/guide/beginner/"><span class="ficon-keyboard_arrow_right ico-arrow"></span>車買取・車査定　徹底ガイド一覧へ</a></p>
+				</div>
+			</article>
+
+			<!-- 同メーカーの相場 -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">トヨタの他モデルの査定額</h2>
+					<ul class="car-thumb-area">
+						<% for (var i = 0; i < 6; i++) { %>
+						<li class="car-thumb-list">
+							<a href="/sp/souba/make/model/">
+								<figure>
+									<span class="car-thumb-img"><img src="/img/common/no-image.jpg" width="720" height="480" alt="フィット"></span>
+									<span class="txt-rank multiple">
+										<span class="car-thumb-make-name">アルファード</span>
+										<span class="car-thumb-price">相場価格：～255.5万円</span>
+									</span>
+									<span class="ficon-keyboard_arrow_right ico-arrow"></span>
+								</figure>
+							</a>
+						</li>
+						<% } %>
+					</ul>
+					<p class="node-end-link"><a href="/sp/souba/make/"><span class="ficon-keyboard_arrow_right ico-arrow"></span>トヨタの他車種の査定相場を見る</a></p>
+				</div>
+			</article>
+
+			<!-- 同ボティタイプ他社の相場 -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">他のメーカーのセダンの査定額</h2>
+					<ul class="car-thumb-area">
+						<% for (var i = 0; i < 6; i++) { %>
+						<li class="car-thumb-list">
+							<a href="/sp/souba/make/model/">
+								<figure>
+									<span class="car-thumb-img"><img src="/img/common/no-image.jpg" width="720" height="480" alt="フィット"></span>
+									<span class="txt-rank multiple">
+										<span class="car-thumb-make-name">トヨタ<br>アルファード</span>
+										<span class="car-thumb-price">相場価格：～255.5万円</span>
+									</span>
+									<span class="ficon-keyboard_arrow_right ico-arrow"></span>
+								</figure>
+							</a>
+						</li>
+						<% } %>
+					</ul>
+				</div>
+			</article>
+
+			<!-- ページトップに戻る -->
+			<p class="page-end-link"><a href="#pagetop" class="scroll-a"><span class="ficon-keyboard_arrow_up ico-arrow fsize-32"></span>ホンダ　フィット　買取・査定相場ページトップに戻る</a></p>
+
+			↓いらないコンテンツ？
+
+			<!-- ヤフオク落札価格一覧 -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">ヤフオク落札価格を調べる</h2>
+					<p class="mb-20">車の売却は、買取店がお得？ネットオークションがお得？ヤフオクの落札相場を確認して、売却方法を検討しよう！<br>
+						<span class="txt-strong">落札価格 最安1円 平均176,295円 最高1,078,000円(※2016年7月26日調べ)</span></p>
+					<div class="review-list-area">
+						<% for (var i = 0; i < 2; i++) { %>
+						<div class="review-list-area-inner">
+							<div class="review-main-info-block">
+								<div class="review-difference-box">
+									<dl class="review-difference-list">
+										<dt class="review-difference-list-ttl">落札額</dt>
+										<dd class="review-difference-list-body">
+											<span class="fsize-30">20.5</span>万円
+											<span class="review-difference-list-body-supplement">(入札数：8社)</span>
+										</dd>
+									</dl>
+								</div>
+								<div class="review-spec-box">
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">落札時期</dt>
+										<dd class="review-spec-list-body">2017年3月</dd>
+									</dl>
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">グレード</dt>
+										<dd class="review-spec-list-body">G“ツーリングセレクション”(CVT_1.5)</dd>
+									</dl>
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">カラー</dt>
+										<dd class="review-spec-list-body">ホワイト系</dd>
+									</dl>
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">年式</dt>
+										<dd class="review-spec-list-body">2007年/平成19年</dd>
+									</dl>
+									<dl class="review-spec-list">
+										<dt class="review-spec-list-ttl">走行距離</dt>
+										<dd class="review-spec-list-body">65,001km～70,000km</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+						<% } %>
+					</div>
+					<p class="node-end-link"><a href="http://closedsearch.auctions.yahoo.co.jp/jp/closedsearch?auccat=26360&brand_id=8185"
+							target="_blank"><span class="ficon-keyboard_arrow_right ico-arrow"></span>ヤフオクでホンダ フィットの出品状況を確認する</a></p>
+				</div>
+			</article>
+
+			<!-- ホンダ フィット 試乗レポート＆フォトレビュー -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">ホンダ フィット 試乗レポート＆フォトレビュー</h2>
+					<div class="cv-report-area">
+						<ul class="cv-report-area-body">
+							<li class="cv-report-area-body-list">
+								<span class="cv-report-area-body-list-tag">試乗</span>
+								<a href="http://carview.yahoo.co.jp/article/testdrive/20090630-20100304-carview/" target="_blank" class="cv-report-area-body-list-txt">国民的コンパクト車対決
+									FIT vs VITZの一騎打ち!(2008.2.6)</a>
+							</li>
+							<li class="cv-report-area-body-list">
+								<span class="cv-report-area-body-list-tag">フォト</span>
+								<a href="http://carview.yahoo.co.jp/article/photo/20120521-20200359-carview/" target="_blank" class="cv-report-area-body-list-txt">フィットが燃費アップ！
+									女性向け＆RSも登場(2012.5.24)</a>
+							</li>
+						</ul>
+						<div class="cv-report-area-supply-link">記事の提供元：<a href="http://carview.yahoo.co.jp/article/market/20160418-20102810-carview/"
+								target="_blank"><img src="/img/common/logo_cv_since2013.svg" width="72" height="20" alt="carview!"></a></div>
+					</div>
+				</div>
+			</article>
+
+			<!-- 車買取ニュース＆コラム -->
+			<article>
+				<div class="content-node">
+					<h2 class="ttl-section">車買取ニュース＆コラム</h2>
+					<ul class="news-thumb-area">
+						<% for (var i = 0; i < 3; i++) { %>
+						<li class="news-thumb-list">
+							<a href="/sp/news/detail/">
+								<figure>
+									<span class="news-thumb-img"><img src="http://dummyimage.com/228x140/cccccc/fff.png" alt="2016年優秀買取店アワード"></span>
+									<figcaption>
+										<span class="news-thumb-memo clearfix">
+											<span class="news-thumb-tag">ニュース</span>
+											<span class="news-thumb-days">2016年12月1日</span>
+										</span>
+										<span class="news-thumb-ttl">2016年優秀買取店アワード<span class="ico-new">NEW</span></span>
+									</figcaption>
+								</figure>
+							</a>
+						</li>
+						<% } %>
+					</ul>
+					<p class="node-end-link"><a href="/sp/news/"><span class="ficon-keyboard_arrow_right ico-arrow"></span>車買取ニュース＆コラム一覧へ</a></p>
+				</div>
+			</article>
+
+		</div><!-- main-content end -->
+
+		<!-- 買取carviewサイトメニュー -->
+		<%- include('../../../_footer_nav') %>
+	</div>
+
+	<!-- 打ち消し表示 -->
+	<div class="explanatory-note-area">
+		<p class="explanatory-note-txt">※1　2016年6月時点　当社調べ</p>
+		<p class="explanatory-note-txt">※2　2011年9月～2016年1月　当社実績調査による３社以上見積り比較の平均差額）</p>
+	</div><!-- explanatory-note-area -->
+</main>
+
+<!-- footer -->
+<%- include('../../../_footer') %>
+
+<!-- javascript -->
+<%- include('../../../_end') %>
