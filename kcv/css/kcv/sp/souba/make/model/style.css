@@ -545,10 +545,6 @@ select:focus {
   top: 6px;
 }
 
-.breadcrumbs-list:last-child {
-  padding-right: 0;
-}
-
 .breadcrumbs-list:last-child:after {
   border: none;
 }
@@ -1072,14 +1068,6 @@ select:focus {
 }
 
 .ttl-section {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-bottom: 2.5vw;
   padding-top: 1.25vw;
   padding-bottom: 0.9375vw;
@@ -2823,7 +2811,7 @@ select:focus {
   margin: 0;
   background-color: #ffffff;
   text-align: center;
-  font-size: 4.375vw;
+  font-size: 3.75vw;
   font-weight: 700;
   color: #4A67AD;
   -webkit-transition: 0.3s ease;
@@ -2892,6 +2880,7 @@ select:focus {
   height: 0;
   background-color: transparent;
   overflow: hidden;
+  font-size: 4.375vw;
 }
 
 .hamburger-menu ~ .gnav-area--sp.appearance {
@@ -3046,6 +3035,88 @@ select:focus {
 
 .gnav-shade:hover {
   color: #474E66;
+}
+
+.css-accordion > .css-accordion__btn {
+  padding-left: .5em;
+  text-indent: -1em;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.css-accordion > .css-accordion__btn .css-accordion__btn-body {
+  text-decoration: underline;
+}
+
+.css-accordion > .css-accordion__btn .icon-expand-more {
+  font-weight: 900;
+}
+
+.css-accordion > .css-accordion__content {
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  height: 0;
+}
+
+.css-accordion.appearance > .css-accordion__btn .icon-expand-more:before {
+  content: "\e20a";
+}
+
+.css-accordion.appearance > .css-accordion__content {
+  visibility: visible;
+  opacity: 1;
+  max-height: 1000vh;
+  height: auto;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.css-accordion-blur {
+  position: relative;
+}
+
+.css-accordion-blur > .css-accordion-blur__content {
+  overflow: hidden;
+  max-height: initial;
+  height: 300px;
+  padding-bottom: 40px;
+}
+
+.css-accordion-blur > .css-accordion-blur__btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 32px;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(40%, white));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 40%);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.css-accordion-blur > .css-accordion-blur__btn .ficon-keyboard_arrow_down {
+  font-weight: 300;
+  font-size: 15vw;
+}
+
+.css-accordion-blur.appearance > .css-accordion-blur__btn {
+  background: none;
+}
+
+.css-accordion-blur.appearance > .css-accordion-blur__btn .ficon-keyboard_arrow_down:before {
+  content: "\e316";
+}
+
+.css-accordion-blur.appearance > .css-accordion-blur__content {
+  visibility: visible;
+  opacity: 1;
+  max-height: 1000vh;
+  height: auto !important;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
 }
 
 .horizontal-table th, .assessment-example-car-info th, .review-spec-box th, .review-user-eval-box th, .review-detail-box th, .mv-review-spec-box th, .y-auction-desc th {
