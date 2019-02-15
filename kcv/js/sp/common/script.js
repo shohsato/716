@@ -92,6 +92,35 @@ $(function(){
 	});
 });
 
+//------------------------------------------------------------
+// accordion
+//------------------------------------------------------------
+$(function(){
+	$('.css-accordion__btn').on('click', function(event){
+		event.preventDefault();
+		event.stopPropagation();
+		var $this = $(this);
+		var $accordionParent = $this.parent('.css-accordion');
+
+		if($accordionParent.hasClass('appearance')) {
+			// アコーディオン閉じるときに見出しに戻す
+			if($this.hasClass('accrordion-scroll')) {
+				$accordionParent.removeClass('appearance');
+				var linkTo = $this.attr('href');
+				var $target = $(linkTo);
+				var offset = $target.data('offsettop');
+				var pos = $target.offset().top - offset;
+				$('html,body').animate({scrollTop: pos}, 400);
+				return false;
+			} else {
+				$accordionParent.removeClass('appearance');
+			}
+		} else {
+			$accordionParent.addClass('appearance');
+		}
+	});
+});
+
 
 //------------------------------------------------------------
 // blur accordion
@@ -120,25 +149,4 @@ $(function(){
 			$accordionParent.addClass('appearance');
 		}
 	});
-});
-
-
-//------------------------------------------------------------
-// Smooth Scroll
-//------------------------------------------------------------
-
-// smooth_scroll(関数化)
-function smooth_scroll(event) {
-	var $this = $(this);
-	var linkTo = $this.attr('href');
-	var $target = $(linkTo);
-	var offset = $target.data('offsettop');
-	var pos = $target.offset().top - offset;
-	$('html,body').animate({scrollTop: pos}, 400);
-	return false;
-}
-
-// 'a.smooth-scroll'用イベント処理
-$(function(){
-	$('a.smooth-scroll').on('click', smooth_scroll);
 });
